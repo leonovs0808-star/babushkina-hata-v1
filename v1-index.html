@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Бабушкина Хата · Родовое имение Весловских · Сочи</title>
+<meta name="description" content="Усадьба, дом-музей и семейная винодельня в горах Сочи. Приезжайте в гости: экскурсия, дегустация, банкеты, фотосессии. По предварительной записи."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=2"/>
+<style>
+  /* Thumbnail for standalone bundler */
+  body { opacity: 1; }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="width:100%;height:100%;display:block">
+    <rect width="400" height="400" fill="#FAF8F5"/>
+    <g transform="translate(120,100)" fill="none" stroke="#B85C3A" stroke-width="6" stroke-linejoin="round">
+      <path d="M80 20 L150 80 V180 H10 V80 Z"/>
+      <path d="M50 180 V120 H110 V180"/>
+      <path d="M20 90 L80 20 L140 90"/>
+    </g>
+    <text x="200" y="330" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="#3D2B1F">Бабушкина Хата</text>
+    <text x="200" y="360" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" letter-spacing="3" fill="#7A6A5E">С 1947 ГОДА · СОЧИ</text>
+  </svg>
+</template>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="shell.jsx"></script>
+<script type="text/babel" src="pages-1.jsx"></script>
+<script type="text/babel" src="pages-2.jsx"></script>
+
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  // ===== TWEAKABLE DEFAULTS =====
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "theme": "day"
+  }/*EDITMODE-END*/;
+
+  function App() {
+    const route = useRoute();
+    const [booking, setBooking] = useState({ open: false, type: '' });
+    const [theme, setTheme] = useState(TWEAK_DEFAULTS.theme);
+
+    useEffect(() => {
+      document.documentElement.dataset.theme = theme;
+    }, [theme]);
+
+    const openBooking = (type='') => setBooking({ open: true, type });
+    const closeBooking = () => setBooking(b => ({ ...b, open: false }));
+
+    let Page;
+    switch (route) {
+      case 'usadba':     Page = <UsadbaPage onOpenBooking={openBooking}/>; break;
+      case 'vinodelnya': Page = <VinodelnyaPage onOpenBooking={openBooking}/>; break;
+      case 'guests':     Page = <GuestsPage onOpenBooking={openBooking}/>; break;
+      case 'gallery':    Page = <GalleryPage/>; break;
+      case 'reviews':    Page = <ReviewsPage onOpenBooking={openBooking}/>; break;
+      case 'contacts':   Page = <ContactsPage onOpenBooking={openBooking}/>; break;
+      default:           Page = <HomePage onOpenBooking={openBooking}/>;
+    }
+
+    return (
+      <div data-screen-label={route}>
+        <Header route={route} onOpenBooking={openBooking}/>
+        {Page}
+        <Footer onOpenBooking={openBooking}/>
+        <BookingModal open={booking.open} onClose={closeBooking} presetType={booking.type}/>
+        <TweaksPanel theme={theme} setTheme={setTheme}/>
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

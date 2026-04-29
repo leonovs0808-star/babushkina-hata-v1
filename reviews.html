@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отзывы — Бабушкина Хата · Сочи</title>
+<meta name="description" content="Отзывы гостей усадьбы Бабушкина Хата. Что говорят те, кто уже побывал у нас."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #F7F6F3; color: #2D2A27; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+img { display: block; max-width: 100%; }
+a { color: #C25D35; text-decoration: none; }
+a:hover { color: #A34D2B; }
+
+:root {
+  --bg: #F7F6F3; --bg2: #EDEAE4; --dark: #2C2420;
+  --text: #2D2A27; --text2: #7A7067;
+  --accent: #C25D35; --accent-hover: #A34D2B;
+  --border: #E0DCD6; --container: 1200px; --side: 80px;
+}
+
+/* HEADER */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F7F6F3; height: 72px; display: flex; align-items: center; transition: box-shadow 0.2s; }
+.site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.header-inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: flex; flex-direction: column; line-height: 1.15; text-decoration: none; flex-shrink: 0; cursor: pointer; }
+.logo-main { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); }
+.logo-sub { font-size: 11px; color: var(--text2); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
+.main-nav { display: flex; align-items: center; gap: 28px; list-style: none; }
+.main-nav a { font-size: 15px; font-weight: 500; color: var(--text); transition: color 0.15s; white-space: nowrap; }
+.main-nav a:hover, .main-nav a.active { color: var(--accent); }
+.nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 15px !important; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--accent-hover) !important; }
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+.mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(44,36,32,0.55); z-index: 200; }
+.mobile-nav-overlay.open { display: block; }
+.mobile-nav-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--bg); z-index: 201; transform: translateX(100%); transition: transform 0.3s; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 8px; }
+.mobile-nav-panel.open { transform: translateX(0); }
+.mobile-nav-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
+.mobile-nav-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
+.mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); line-height: 1; }
+
+/* ЗАГОЛОВОК */
+.page-header {
+  padding: 100px var(--side) 64px;
+  max-width: var(--container);
+  margin: 72px auto 0;
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; font-weight: 700; color: var(--text);
+  line-height: 1.2; margin-bottom: 16px;
+}
+.page-header p { font-size: 18px; color: var(--text2); }
+
+/* КАРТОЧКИ ОТЗЫВОВ */
+.reviews-section {
+  background: var(--bg);
+  padding: 0 var(--side) 80px;
+}
+.reviews-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.review-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 36px 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stars {
+  display: flex;
+  gap: 4px;
+}
+.star {
+  width: 18px; height: 18px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.review-text {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+.review-author {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text2);
+}
+
+/* ССЫЛКИ НА ПЛАТФОРМЫ */
+.platform-links {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}
+.platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  background: #fff;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.platform-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(194,93,53,0.04);
+}
+
+/* CTA */
+.cta-section { background: var(--accent); padding: 80px var(--side); text-align: center; margin-top: 80px; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 32px; }
+.btn-white { display: inline-block; background: #fff; color: var(--accent); padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all 0.2s; }
+.btn-white:hover { background: var(--bg); color: var(--accent-hover); }
+
+/* ФУТЕР КОМПАКТНЫЙ */
+.site-footer { background: var(--dark); padding: 40px 0 24px; }
+.footer-main {
+  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 32px; align-items: center;
+}
+.footer-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+.footer-logo-main { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
+.footer-logo-sub { font-size: 11px; color: #7A7067; letter-spacing: 0.04em; text-transform: uppercase; }
+.footer-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.footer-nav a { font-size: 14px; color: #E0DCD6; transition: color 0.15s; white-space: nowrap; }
+.footer-nav a:hover { color: #fff; }
+.footer-contacts { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.footer-contacts a, .footer-contacts span { font-size: 14px; color: #E0DCD6; white-space: nowrap; }
+.footer-contacts a { transition: color 0.15s; }
+.footer-contacts a:hover { color: #fff; }
+.footer-sep { color: #7A7067; font-size: 14px; }
+.footer-bottom {
+  max-width: var(--container); margin: 16px auto 0; padding: 16px var(--side) 0;
+  border-top: 1px solid rgba(224,220,214,0.1);
+}
+.footer-bottom p { font-size: 12px; color: #7A7067; }
+
+@media (max-width: 1199px) {
+  :root { --side: 40px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 767px) {
+  :root { --side: 24px; }
+  .site-header { height: 60px; }
+  .main-nav { display: none; }
+  .burger { display: flex; }
+  .page-header { padding-top: 72px; }
+  .page-header h1 { font-size: 30px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .cta-section h2 { font-size: 26px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+.footer-socials { display: flex; align-items: center; gap: 12px; }
+.social-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(224,220,214,0.1); color: #E0DCD6; transition: all 0.2s; }
+.social-icon:hover { background: rgba(224,220,214,0.2); color: #fff; }
+
+/* === ГЛОБАЛЬНЫЙ МОБИЛЬНЫЙ ФИК (768px) === */
+@media (max-width: 768px) {
+  /* Общие отступы */
+  :root { --side: 16px !important; }
+  
+  /* Hero */
+  .page-hero { height: 60vh !important; min-height: 320px !important; }
+  .page-hero-content h1,
+  .page-hero-content h1,
+  h1 { font-size: 2rem !important; }
+  .page-hero-content p,
+  .hero-subtitle { font-size: 1rem !important; }
+  .page-hero-content { padding: 0 24px 40px !important; }
+  .hero-content { padding: 0 24px 52px !important; }
+  .hero-title { font-size: 2rem !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+  .hero-desc { font-size: 1rem !important; }
+
+  /* Двухколоночные блоки */
+  .two-col-inner,
+  .two-col-inner.reverse,
+  .about-inner,
+  .trust-inner,
+  .contacts-inner,
+  .tasting-immersive {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 40px 16px !important;
+  }
+  .two-col-inner.reverse .col-photo,
+  .about-photo { order: -1 !important; }
+  .col-photo,
+  .about-photo,
+  .trust-photo { aspect-ratio: 16/9 !important; width: 100% !important; }
+
+  /* Карточки */
+  .cards-grid,
+  .reviews-carousel,
+  .artifacts-grid,
+  .philosophy-grid { grid-template-columns: 1fr !important; }
+
+  /* Тексты */
+  body { font-size: 16px !important; }
+  .col-text p,
+  .about-text p,
+  .history-inner p,
+  .heritage-inner p { font-size: 16px !important; }
+  .section-title,
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.2rem !important; }
+
+  /* Секции */
+  .tips-inner,
+  .directions-inner,
+  .history-inner,
+  .heritage-inner,
+  .text-center-inner { padding: 0 16px !important; }
+  .text-center-section,
+  .tips-section,
+  .directions-section { padding: 40px 0 !important; }
+
+  /* Footer */
+  .footer-main {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+  .footer-nav,
+  .footer-socials,
+  .footer-contacts-row { justify-content: center !important; flex-wrap: wrap !important; }
+  .footer-bottom { text-align: center !important; }
+
+  /* Галерея */
+  .gallery-grid { columns: 1 !important; }
+  .gallery-header { padding: 40px 16px 32px !important; }
+  .gallery-header h1 { font-size: 1.8rem !important; }
+  .filters { padding: 0 16px 32px !important; }
+
+  /* CTA */
+  .cta-section { padding: 48px 16px !important; }
+  .cta-section h2 { font-size: 1.6rem !important; }
+  .cta-phone { font-size: 1.2rem !important; }
+
+  /* Contacts */
+  .contacts-map iframe { height: 240px !important; }
+  .contacts-text h1 { font-size: 2rem !important; }
+  .phone-link { font-size: 1.5rem !important; }
+
+  /* page-wrap */
+  .page-wrap { padding: 40px 16px !important; }
+  .page-header h1 { font-size: 2rem !important; }
+}
+
+/* === МОБИЛЬНАЯ ШАПКА — КРИТИЧЕСКИЙ ФИК === */
+@media screen and (max-width: 768px) {
+  .main-nav { display: none !important; }
+  .burger { display: flex !important; }
+  .site-header { height: 60px !important; }
+  .header-inner { padding: 0 16px !important; }
+
+  /* Reels — адаптив */
+  .reel-thumb {
+    flex: 0 0 140px !important;
+    height: 240px !important;
+  }
+  .reels-wrapper { padding: 0 16px !important; }
+
+  /* Горизонтальные видео — 1 колонка */
+  .video-horiz {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px !important;
+  }
+
+  /* Hero */
+  .hero { height: 70vh !important; }
+  .hero-content { padding: 0 16px 52px !important; }
+  .hero-title { font-size: 2rem !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+  .hero-desc { font-size: 1rem !important; }
+
+  /* Карточки */
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px !important;
+  }
+
+  /* Знакомство */
+  .about-inner {
+    grid-template-columns: 1fr !important;
+    padding: 40px 16px !important;
+    gap: 24px !important;
+  }
+  .about-photo { aspect-ratio: 16/9 !important; }
+
+  /* Доверие */
+  .trust-inner {
+    grid-template-columns: 1fr !important;
+    padding: 40px 16px !important;
+    gap: 24px !important;
+  }
+
+  /* Отзывы */
+  .reviews-carousel {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px !important;
+  }
+
+  /* Контакты */
+  .contacts-inner {
+    grid-template-columns: 1fr !important;
+    padding: 40px 16px !important;
+    gap: 24px !important;
+  }
+
+  /* Цитата */
+  .quote-text { font-size: 1.5rem !important; }
+  .quote-section { padding: 60px 16px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ХЕДЕР -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-main">Бабушкина Хата</span>
+      <span class="logo-sub">Родовое имение Весловских · с&nbsp;1947</span>
+    </a>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="usadba.html">Усадьба</a></li>
+        <li><a href="vinodelnya.html">Винодельня</a></li>
+        <li><a href="banquets.html">Банкеты</a></li>
+        <li><a href="photosessions.html">Фотосессии</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="reviews.html" class="active">Отзывы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a class="nav-cta" href="contacts.html">Связаться с нами</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger-btn" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+<nav class="mobile-nav-panel" id="mobile-panel">
+  <button class="mobile-close" id="mobile-close">×</button>
+  <a href="usadba.html">Усадьба</a>
+  <a href="vinodelnya.html">Винодельня</a>
+  <a href="banquets.html">Банкеты</a>
+  <a href="photosessions.html">Фотосессии</a>
+  <a href="gallery.html">Галерея</a>
+  <a href="reviews.html">Отзывы</a>
+  <a href="contacts.html">Контакты</a>
+  <a class="nav-cta" href="contacts.html">Связаться с нами</a>
+</nav>
+
+<main>
+
+<!-- 6.1 ЗАГОЛОВОК -->
+<div class="page-header">
+  <h1>Что говорят те, кто уже побывал у&nbsp;нас</h1>
+</div>
+
+<!-- 6.2 ОТЗЫВЫ -->
+<section class="reviews-section">
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Это место — настоящая машина времени. Дети в&nbsp;восторге от&nbsp;животных, а&nbsp;дегустация — отдельная история!»</p>
+      <span class="review-author">Анна К.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Были на&nbsp;банкете — шашлык, вино, закат над горами. Лучший день за&nbsp;всё лето.»</p>
+      <span class="review-author">Дмитрий М.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Роман — потрясающий рассказчик. Два часа пролетели как десять минут.»</p>
+      <span class="review-author">Мария С.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Приезжали с&nbsp;корпоративом на&nbsp;20 человек. Всё организовано идеально: еда, вино, атмосфера. Коллеги до&nbsp;сих пор вспоминают.»</p>
+      <span class="review-author">Алексей В.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Вернулись уже третий раз. Каждый раз — новый сорт вина и&nbsp;новые эмоции.»</p>
+      <span class="review-author">Екатерина Д.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <p class="review-text">«Фотосессию делали на&nbsp;фоне хаты — получилось волшебно. Отдельное спасибо за&nbsp;гостеприимство.»</p>
+      <span class="review-author">Ольга Н.</span>
+    </div>
+
+  </div>
+
+  <!-- ССЫЛКИ НА ПЛАТФОРМЫ -->
+  <div class="platform-links">
+    <a class="platform-link" href="https://2gis.ru/sochi/firm/70000001030036274" target="_blank" rel="noreferrer">
+      <img src="assets/2gis-logo.svg" height="24" alt="2ГИС"/>
+      Мы на&nbsp;2ГИС
+    </a>
+    <a class="platform-link" href="https://yandex.ru/maps/org/babushkina_khata/1728203932/?ll=39.820214,43.604570&amp;z=16" target="_blank" rel="noreferrer">
+      <img src="assets/yandex-maps-logo.png" height="24" width="24" alt="Яндекс Карты" style="border-radius:4px;"/>
+      Мы на&nbsp;Яндекс.Картах
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Приезжайте — составьте своё впечатление.</h2>
+  <a class="btn-white" href="contacts.html">Связаться с&nbsp;нами</a>
+</section>
+
+</main>
+
+<!-- ФУТЕР -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <span class="footer-logo-main">Бабушкина Хата</span>
+        <span class="footer-logo-sub">Родовое имение Весловских</span>
+      </a>
+    </div>
+    <nav class="footer-nav">
+      <a href="usadba.html">Усадьба</a>
+      <span class="footer-sep">·</span>
+      <a href="vinodelnya.html">Винодельня</a>
+      <span class="footer-sep">·</span>
+      <a href="gallery.html">Галерея</a>
+      <span class="footer-sep">·</span>
+      <a href="reviews.html">Отзывы</a>
+      <span class="footer-sep">·</span>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="https://t.me/babushkinahata" target="_blank" rel="noreferrer" title="Telegram-канал" class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      </a>
+      <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-.9-1.49.3v1.414c0 .44-.24.7-.9.7-2.44 0-4.97-1.522-6.64-4.097-2.694-3.83-3.44-6.7-3.44-7.295 0-.36.13-.62.62-.62h1.744c.46 0 .63.21.81.7.88 2.52 2.36 4.737 2.97 4.737.23 0 .33-.1.33-.66V8.84c-.07-1.19-.69-1.29-.69-1.71 0-.22.18-.44.47-.44h2.74c.39 0 .53.21.53.65v3.52c0 .39.17.53.29.53.23 0 .42-.14.84-.56 1.3-1.46 2.23-3.7 2.23-3.7.12-.26.34-.5.8-.5h1.744c.52 0 .64.27.52.65-.22.99-2.33 3.98-2.33 3.98-.18.3-.25.43 0 .76.18.25.77.75 1.16 1.2.72.82 1.27 1.51 1.42 1.99.15.47-.1.71-.57.71z"/></svg>
+      </a>
+      <a href="https://wa.me/79186004869" target="_blank" rel="noreferrer" title="WhatsApp" class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+    </div>
+    </div>
+    <div class="footer-bottom">
+    <p>© 2025 Бабушкина Хата</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('p, h1, h2, h3').forEach(function(el) {
+  el.innerHTML = el.innerHTML.replace(/([^>\s])\s+(\S+)\s*$/, '$1\u00a0$2');
+});
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', function() {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+const burgerBtn = document.getElementById('burger-btn');
+const mobileOverlay = document.getElementById('mobile-overlay');
+const mobilePanel = document.getElementById('mobile-panel');
+const mobileClose = document.getElementById('mobile-close');
+function openMenu() { mobileOverlay.classList.add('open'); mobilePanel.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobileOverlay.classList.remove('open'); mobilePanel.classList.remove('open'); document.body.style.overflow = ''; }
+burgerBtn.addEventListener('click', openMenu);
+mobileOverlay.addEventListener('click', closeMenu);
+mobileClose.addEventListener('click', closeMenu);
+</script>
+</body>
+</html>
