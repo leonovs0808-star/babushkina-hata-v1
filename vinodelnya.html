@@ -3,497 +3,295 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Винодельня и&nbsp;дегустация — Бабушкина Хата · Сочи</title>
-<meta name="description" content="Семейная винодельня в&nbsp;четвёртом поколении. 12–15 сортов вина. Дегустация в&nbsp;погребе при свечах. Записаться: +7-918-600-48-69."/>
+<title>Винодельня и дегустация — Бабушкина Хата · Сочи</title>
+<meta name="description" content="Семейная винодельня в четвёртом поколении. 24 сорта, 52 года в ремесле. Дегустация в погребе. Сочи, с. Прогресс."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: #F7F6F3; color: #2D2A27; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, h4 { text-wrap: balance; }
+h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 img { display: block; max-width: 100%; }
 a { color: #C25D35; text-decoration: none; }
 a:hover { color: #A34D2B; }
+:root { --bg:#F7F6F3; --bg2:#EDEAE4; --dark:#2C2420; --text:#2D2A27; --text2:#7A7067; --accent:#C25D35; --accent-hover:#A34D2B; --border:#E0DCD6; --max:1200px; --side:80px; --gap:100px; }
 
-:root {
-  --bg: #F7F6F3; --bg2: #EDEAE4; --dark: #2C2420;
-  --text: #2D2A27; --text2: #7A7067;
-  --accent: #C25D35; --accent-hover: #A34D2B;
-  --border: #E0DCD6; --container: 1200px; --side: 80px; --gap: 100px;
-}
-
-/* HEADER */
-.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F7F6F3; height: 72px; display: flex; align-items: center; transition: box-shadow 0.2s; }
-.site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.header-inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.logo { display: flex; flex-direction: column; line-height: 1.15; text-decoration: none; flex-shrink: 0; cursor: pointer; }
-.logo-main { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); }
-.logo-sub { font-size: 11px; color: var(--text2); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
-.main-nav { display: flex; align-items: center; gap: 28px; list-style: none; }
-.main-nav a { font-size: 15px; font-weight: 500; color: var(--text); transition: color 0.15s; white-space: nowrap; }
-.main-nav a:hover, .main-nav a.active { color: var(--accent); }
-.nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 15px !important; transition: background 0.2s !important; }
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); height: 72px; display: flex; align-items: center; transition: box-shadow .2s; }
+.site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.h-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; flex-shrink: 0; }
+.logo-t { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); }
+.logo-s { font-size: 11px; color: var(--text2); letter-spacing: .04em; text-transform: uppercase; }
+.nav { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav a { font-size: 14px; font-weight: 500; color: var(--text); transition: color .15s; white-space: nowrap; }
+.nav a:hover, .nav a.active { color: var(--accent); }
+.nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; transition: background .2s !important; }
 .nav-cta:hover { background: var(--accent-hover) !important; }
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
 .burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
-.mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(44,36,32,0.55); z-index: 200; }
-.mobile-nav-overlay.open { display: block; }
-.mobile-nav-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--bg); z-index: 201; transform: translateX(100%); transition: transform 0.3s; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 8px; }
-.mobile-nav-panel.open { transform: translateX(0); }
-.mobile-nav-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
-.mobile-nav-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
-.mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); line-height: 1; }
+.mob-overlay { display: none; position: fixed; inset: 0; background: rgba(44,36,32,.55); z-index: 200; }
+.mob-overlay.open { display: block; }
+.mob-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--bg); z-index: 201; transform: translateX(100%); transition: transform .3s; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 8px; }
+.mob-panel.open { transform: translateX(0); }
+.mob-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
+.mob-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
+.mob-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); }
 
-/* HERO */
-.page-hero { position: relative; height: 90vh; min-height: 560px; margin-top: 72px; display: flex; align-items: flex-end; overflow: hidden; }
-.page-hero-img { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; }
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); }
-.page-hero-content { position: relative; z-index: 2; padding: 0 var(--side) 72px; max-width: 800px; }
-.page-hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
-.page-hero-content h1 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 18px; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
-.page-hero-content p { font-size: 20px; color: rgba(255,255,255,0.88); font-weight: 400; line-height: 1.5; }
+.hero { position: relative; height: 80vh; min-height: 520px; margin-top: 72px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.3) 50%, transparent 100%); }
+.hero-body { position: relative; z-index: 2; padding: 0 var(--side) 72px; max-width: 800px; }
+.hero-body h1 { font-family: 'Montserrat', sans-serif; font-size: 56px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 14px; text-shadow: 0 2px 16px rgba(0,0,0,.4); }
+.hero-body p { font-size: 20px; color: rgba(255,255,255,.88); }
 
-/* УТИЛИТЫ */
-.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text2); margin-bottom: 16px; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 28px; }
-.text-link { font-size: 16px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; margin-top: 12px; }
-.text-link:hover { gap: 8px; color: var(--accent-hover); }
+.sec { padding: var(--gap) 0; }
+.cnt { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); }
 
-/* ДВУХКОЛОНОЧНЫЕ БЛОКИ */
-.two-col { padding: 0; }
-.two-col-inner { max-width: var(--container); margin: 0 auto; padding: var(--gap) var(--side); display: grid; grid-template-columns: 55fr 45fr; gap: 72px; align-items: center; }
-.two-col-inner.reverse { grid-template-columns: 45fr 55fr; }
-.two-col-inner.reverse .col-photo { order: -1; }
-.col-photo { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
-.col-photo img { width: 100%; height: 100%; object-fit: cover; }
-.col-text p { font-size: 18px; color: var(--text); line-height: 1.65; max-width: 580px; margin-bottom: 18px; }
-.col-text p:last-of-type { margin-bottom: 0; }
+/* Текстовый блок по центру */
+.prose { max-width: 720px; margin: 0 auto; padding: 0 var(--side); }
+.prose h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 28px; }
+.prose p { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 20px; }
+.prose p:last-of-type { margin-bottom: 0; }
 
-/* ДЕГУСТАЦИОННЫЙ ЗАЛ */
-/* ДЕГУСТАЦИОННЫЙ ЗАЛ — два столбца */
-.tasting-section { background: var(--bg); padding: 0; }
-.tasting-immersive {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 480px;
-}
-.tasting-bg {
-  width: 100%; height: 100%; object-fit: cover; object-position: left center; display: block;
-}
-.tasting-content {
-  background: #2C2420;
-  padding: 60px;
-  display: flex; flex-direction: column; justify-content: center; gap: 20px;
-}
-.tasting-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px; font-weight: 700; color: #fff; line-height: 1.2;
-}
-.tasting-content p {
-  font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.65;
-}
-.tasting-quote {
-  border-left: 3px solid #5A7247;
-  padding-left: 18px;
-  font-style: italic;
-  color: rgba(255,255,255,0.75) !important;
-}
+/* Двухколоночные */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.two.rev .col-ph { order: -1; }
+.col-ph { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
+.col-ph img { width: 100%; height: 100%; object-fit: cover; }
+.col-tx h2 { font-family: 'Montserrat', sans-serif; font-size: 34px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 24px; }
+.col-tx p { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 18px; max-width: 540px; }
+.col-tx p:last-of-type { margin-bottom: 0; }
+
+/* Тёмный блок */
+.dark-sec { background: var(--dark); padding: var(--gap) var(--side); }
+.dark-prose { max-width: 720px; margin: 0 auto; }
+.dark-prose h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 28px; }
+.dark-prose p { font-size: 17px; color: rgba(255,255,255,.85); line-height: 1.75; margin-bottom: 20px; }
+.dark-prose p:last-of-type { margin-bottom: 0; }
 
 /* CTA */
-.cta-section { background: var(--accent); padding: 80px var(--side); text-align: center; margin: 0; }
-.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: #fff; margin-bottom: 16px; line-height: 1.3; }
-.cta-section .cta-sub { font-size: 18px; color: rgba(255,255,255,0.88); margin-bottom: 8px; }
-.cta-section .cta-phone { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 36px; display: block; }
-.cta-section .cta-phone:hover { color: rgba(255,255,255,0.85); }
-.btn-white { display: inline-block; background: #fff; color: var(--accent); padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all 0.2s; }
-.btn-white:hover { background: var(--bg); color: var(--accent-hover); }
+.cta-sec { background: var(--accent); padding: 80px var(--side); text-align: center; }
+.cta-sec h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+.cta-sec > p { font-size: 18px; color: rgba(255,255,255,.88); margin-bottom: 8px; }
+.cta-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; }
+.cta-phone:hover { opacity: .85; color: #fff; }
+.btn-w { display: inline-block; background: #fff; color: var(--accent); padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all .2s; }
+.btn-w:hover { background: var(--bg); color: var(--accent-hover); }
 
-/* ФУТЕР КОМПАКТНЫЙ */
+/* ФУТЕР */
 .site-footer { background: var(--dark); padding: 40px 0 24px; }
-.footer-main {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  display: grid; grid-template-columns: auto 1fr auto;
-  gap: 32px; align-items: center;
-}
-.footer-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
-.footer-logo-main { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
-.footer-logo-sub { font-size: 11px; color: #7A7067; letter-spacing: 0.04em; text-transform: uppercase; }
-.footer-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.footer-nav a { font-size: 14px; color: #E0DCD6; transition: color 0.15s; white-space: nowrap; }
-.footer-nav a:hover { color: #fff; }
-.footer-contacts { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.footer-contacts a, .footer-contacts span { font-size: 14px; color: #E0DCD6; white-space: nowrap; }
-.footer-contacts a { transition: color 0.15s; }
-.footer-contacts a:hover { color: #fff; }
-.footer-sep { color: #7A7067; font-size: 14px; }
-.footer-bottom {
-  max-width: var(--container); margin: 16px auto 0; padding: 16px var(--side) 0;
-  border-top: 1px solid rgba(224,220,214,0.1);
-}
-.footer-bottom p { font-size: 12px; color: #7A7067; }
+.f-main { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; }
+.f-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+.f-logo-t { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
+.f-logo-s { font-size: 11px; color: #7A7067; letter-spacing: .04em; text-transform: uppercase; }
+.f-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.f-nav a { font-size: 14px; color: #E0DCD6; transition: color .15s; white-space: nowrap; text-decoration: none; }
+.f-nav a:hover { color: #fff; }
+.f-sep { color: #7A7067; font-size: 14px; }
+.f-soc { display: flex; align-items: center; gap: 12px; }
+.soc-ic { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(224,220,214,.1); color: #E0DCD6; transition: all .2s; }
+.soc-ic:hover { background: rgba(224,220,214,.2); color: #fff; }
+.f-bot { max-width: var(--max); margin: 16px auto 0; padding: 16px var(--side) 0; border-top: 1px solid rgba(224,220,214,.1); }
+.f-bot p { font-size: 12px; color: #7A7067; }
 
-/* АДАПТИВНОСТЬ */
+@media (max-width: 1199px) { :root { --side: 40px; } .two { gap: 40px; } .f-main { grid-template-columns: 1fr 1fr; } .f-main > :first-child { grid-column: 1/-1; } }
+
+/* Tablet */
 @media (max-width: 1199px) {
-  :root { --side: 40px; }
-  .two-col-inner { gap: 48px; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: 1 / -1; }
+  .nav { gap: 16px; }
+  .nav a { font-size: 13px; }
+  .nav-cta { display: none; }
 }
 @media (max-width: 767px) {
-  :root { --side: 24px; --gap: 56px; }
-  .site-header { height: 60px; }
-  .main-nav { display: none; }
-  .burger { display: flex; }
-  .page-hero { height: 70vh; }
-  .page-hero-content h1 { font-size: 32px; }
-  .page-hero-content p { font-size: 17px; }
-  .two-col-inner { padding: 56px var(--side); gap: 32px; grid-template-columns: 1fr; }
-  .two-col-inner.reverse { padding: 56px var(--side); grid-template-columns: 1fr; }
-  .two-col-inner.reverse .col-photo { order: 0; }
-  .two-col-inner.reverse .col-photo { order: 0; }
-  .col-text p { font-size: 16px; }
-  .section-title { font-size: 26px; }
-  .tasting-immersive { grid-template-columns: 1fr; }
-  .tasting-bg { height: auto; aspect-ratio: 16/9; width: 100%; }
-  .tasting-content { padding: 32px 24px; }
-  .tasting-content h2 { font-size: 24px; }
-  .cta-section h2 { font-size: 26px; }
-  .cta-section .cta-phone { font-size: 20px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  :root { --side: 16px; --gap: 56px; }
+  .site-header { height: 60px; } .nav { display: none; } .burger { display: flex; }
+  .h-inner { padding: 0 16px; }
+  .hero { height: 65vh; } .hero-body h1 { font-size: 2rem; } .hero-body p { font-size: 1rem; }
+  .two { grid-template-columns: 1fr; gap: 28px; } .two.rev .col-ph { order: 0; }
+  .col-ph { aspect-ratio: 16/9; }
+  .col-tx h2, .prose h2, .dark-prose h2 { font-size: 26px; }
+  .col-tx p, .prose p, .dark-prose p { font-size: 16px; }
+  .cta-sec { padding: 48px 16px; }
+  .cta-sec h2 { font-size: 26px; } .cta-phone { font-size: 1.2rem; }
+  .f-main { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+  .f-nav, .f-soc { justify-content: center; } .f-bot { text-align: center; }
 }
 
-.footer-socials { display: flex; align-items: center; gap: 12px; }
-.social-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(224,220,214,0.1); color: #E0DCD6; transition: all 0.2s; }
-.social-icon:hover { background: rgba(224,220,214,0.2); color: #fff; }
-
-/* === ГЛОБАЛЬНЫЙ МОБИЛЬНЫЙ ФИК (768px) === */
-@media (max-width: 768px) {
-  /* Общие отступы */
-  :root { --side: 16px !important; }
-  
-  /* Hero */
-  .page-hero { height: 60vh !important; min-height: 320px !important; }
-  .page-hero-content h1,
-  .page-hero-content h1,
-  h1 { font-size: 2rem !important; }
-  .page-hero-content p,
-  .hero-subtitle { font-size: 1rem !important; }
-  .page-hero-content { padding: 0 24px 40px !important; }
-  .hero-content { padding: 0 24px 52px !important; }
-  .hero-title { font-size: 2rem !important; }
-  .hero-subtitle { font-size: 1rem !important; }
-  .hero-desc { font-size: 1rem !important; }
-
-  /* Двухколоночные блоки */
-  .two-col-inner,
-  .two-col-inner.reverse,
-  .about-inner,
-  .trust-inner,
-  .contacts-inner,
-  .tasting-immersive {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-    padding: 40px 16px !important;
-  }
-  .two-col-inner.reverse .col-photo,
-  .about-photo { order: -1 !important; }
-  .col-photo,
-  .about-photo,
-  .trust-photo { aspect-ratio: 16/9 !important; width: 100% !important; }
-
-  /* Карточки */
-  .cards-grid,
-  .reviews-carousel,
-  .artifacts-grid,
-  .philosophy-grid { grid-template-columns: 1fr !important; }
-
-  /* Тексты */
-  body { font-size: 16px !important; }
-  .col-text p,
-  .about-text p,
-  .history-inner p,
-  .heritage-inner p { font-size: 16px !important; }
-  .section-title,
-  h2 { font-size: 1.6rem !important; }
-  h3 { font-size: 1.2rem !important; }
-
-  /* Секции */
-  .tips-inner,
-  .directions-inner,
-  .history-inner,
-  .heritage-inner,
-  .text-center-inner { padding: 0 16px !important; }
-  .text-center-section,
-  .tips-section,
-  .directions-section { padding: 40px 0 !important; }
-
-  /* Footer */
-  .footer-main {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    text-align: center !important;
-  }
-  .footer-nav,
-  .footer-socials,
-  .footer-contacts-row { justify-content: center !important; flex-wrap: wrap !important; }
-  .footer-bottom { text-align: center !important; }
-
-  /* Галерея */
-  .gallery-grid { columns: 1 !important; }
-  .gallery-header { padding: 40px 16px 32px !important; }
-  .gallery-header h1 { font-size: 1.8rem !important; }
-  .filters { padding: 0 16px 32px !important; }
-
-  /* CTA */
-  .cta-section { padding: 48px 16px !important; }
-  .cta-section h2 { font-size: 1.6rem !important; }
-  .cta-phone { font-size: 1.2rem !important; }
-
-  /* Contacts */
-  .contacts-map iframe { height: 240px !important; }
-  .contacts-text h1 { font-size: 2rem !important; }
-  .phone-link { font-size: 1.5rem !important; }
-
-  /* page-wrap */
-  .page-wrap { padding: 40px 16px !important; }
-  .page-header h1 { font-size: 2rem !important; }
-}
-
-/* === МОБИЛЬНАЯ ШАПКА — КРИТИЧЕСКИЙ ФИК === */
-@media screen and (max-width: 768px) {
-  .main-nav { display: none !important; }
-  .burger { display: flex !important; }
-  .site-header { height: 60px !important; }
-  .header-inner { padding: 0 16px !important; }
-
-  /* Reels — адаптив */
-  .reel-thumb {
-    flex: 0 0 140px !important;
-    height: 240px !important;
-  }
-  .reels-wrapper { padding: 0 16px !important; }
-
-  /* Горизонтальные видео — 1 колонка */
-  .video-horiz {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Hero */
-  .hero { height: 70vh !important; }
-  .hero-content { padding: 0 16px 52px !important; }
-  .hero-title { font-size: 2rem !important; }
-  .hero-subtitle { font-size: 1rem !important; }
-  .hero-desc { font-size: 1rem !important; }
-
-  /* Карточки */
-  .cards-grid {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Знакомство */
-  .about-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-  .about-photo { aspect-ratio: 16/9 !important; }
-
-  /* Доверие */
-  .trust-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-
-  /* Отзывы */
-  .reviews-carousel {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Контакты */
-  .contacts-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-
-  /* Цитата */
-  .quote-text { font-size: 1.5rem !important; }
-  .quote-section { padding: 60px 16px !important; }
+/* Small screens */
+@media (max-width: 374px) {
+  .hero-body h1, .page-hero-content h1 { font-size: 1.7rem !important; }
+  .logo-t { font-size: 17px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ХЕДЕР -->
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">
-      <span class="logo-main">Бабушкина Хата</span>
-      <span class="logo-sub">Родовое имение Весловских · с&nbsp;1947</span>
-    </a>
-    <nav>
-      <ul class="main-nav">
-        <li><a href="usadba.html">Усадьба</a></li>
-        <li><a href="vinodelnya.html" class="active">Винодельня</a></li>
-        <li><a href="banquets.html">Банкеты</a></li>
-        <li><a href="photosessions.html">Фотосессии</a></li>
-        <li><a href="gallery.html">Галерея</a></li>
-        <li><a href="reviews.html">Отзывы</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-        <li><a class="nav-cta" href="contacts.html">Связаться с нами</a></li>
-      </ul>
-    </nav>
-    <button class="burger" id="burger-btn" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+<header class="site-header" id="hdr">
+  <div class="h-inner">
+    <a class="logo" href="index.html"><span class="logo-t">Бабушкина Хата</span><span class="logo-s">Родовое имение Весловских · с&nbsp;1945</span></a>
+    <nav><ul class="nav">
+      <li><a href="usadba.html">Усадьба</a></li>
+      <li><a href="vinodelnya.html" class="active">Винодельня</a></li>
+      <li><a href="banquets.html">Банкеты</a></li>
+      <li><a href="photosessions.html">Фотосессии</a></li>
+      <li><a href="gallery.html">Галерея</a></li>
+      <li><a href="reviews.html">Отзывы</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a></li>
+    </ul></nav>
+    <button class="burger" id="burg" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<div class="mobile-nav-overlay" id="mobile-overlay"></div>
-<nav class="mobile-nav-panel" id="mobile-panel">
-  <button class="mobile-close" id="mobile-close">×</button>
-  <a href="usadba.html">Усадьба</a>
-  <a href="vinodelnya.html">Винодельня</a>
-  <a href="banquets.html">Банкеты</a>
-  <a href="photosessions.html">Фотосессии</a>
-  <a href="gallery.html">Галерея</a>
-  <a href="reviews.html">Отзывы</a>
-  <a href="contacts.html">Контакты</a>
-  <a class="nav-cta" href="contacts.html">Связаться с нами</a>
+<div class="mob-overlay" id="mob-ov"></div>
+<nav class="mob-panel" id="mob-pn">
+  <button class="mob-close" id="mob-cl">×</button>
+  <a href="usadba.html">Усадьба</a><a href="vinodelnya.html">Винодельня</a><a href="banquets.html">Банкеты</a><a href="photosessions.html">Фотосессии</a><a href="gallery.html">Галерея</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a>
+  <a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a>
 </nav>
 
 <main>
 
-<!-- 3.1 HERO -->
-<section class="page-hero">
-  <img class="page-hero-img" src="assets/photos/photo_541.jpg" alt="Дегустационный зал Бабушкиной Хаты" loading="eager"/>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <p class="page-hero-eyebrow">винодельня и&nbsp;дегустация</p>
-    <h1>Семейная винодельня. Четвёртое поколение.</h1>
-    <p>Виноделие — не&nbsp;работа. Это хобби, которое мы&nbsp;делаем всей семьёй.</p>
+<!-- 1: HERO -->
+<section class="hero">
+  <img src="assets/photos/photo_230.jpg" alt="Дегустация в&nbsp;погребе" loading="eager"/>
+  <div class="hero-grad"></div>
+  <div class="hero-body">
+    <h1>Винодельня и&nbsp;дегустация</h1>
+    <p>52 года в&nbsp;ремесле. 24 сорта. Приезжайте попробовать.</p>
   </div>
 </section>
 
-<!-- 3.2 КАК Я ПРИШЁЛ К ВИНОДЕЛИЮ -->
-<section class="two-col" style="background: var(--bg);">
-  <div class="two-col-inner">
-    <div class="col-text">
-      <p class="eyebrow">история</p>
-      <h2 class="section-title">Как я&nbsp;пришёл к&nbsp;виноделию</h2>
-      <p>Виноделие в&nbsp;семье — с&nbsp;прадеда. Бабушка делала вино из&nbsp;Изабеллы. Я&nbsp;помогал с&nbsp;трёх лет.</p>
-      <p>В 2010 вернулся — 80 корней винограда. Собрал урожай, сделал вино по-бабушкиному. Угостил друзей. К&nbsp;Новому году закончилось. Понял — надо серьёзнее.</p>
-      <p>Познакомился с&nbsp;директором сочинского винзавода, технологами, начальником лаборатории адлерского завода. Учился практике.</p>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_510.jpg" alt="Роман Весловский с&nbsp;бокалом вина" loading="lazy"/>
-    </div>
+<!-- 2: ВВОДНЫЙ -->
+<section class="sec" style="background:var(--bg)">
+  <div class="prose">
+    <h2>Я&nbsp;занимаюсь виноделием 52&nbsp;года</h2>
+    <p>С&nbsp;вином рождаются, крестятся, женятся и&nbsp;умирают. Это скреп семьи и&nbsp;украшение стола — не&nbsp;средство напиться. Так я&nbsp;к&nbsp;этому отношусь с&nbsp;детства.</p>
+    <p>Первый раз помогал бабушке Иустинье, когда мне было три. С&nbsp;тех пор не&nbsp;останавливался.</p>
+    <p>24 сорта. Больше двухсот технологий, которые я&nbsp;освоил за&nbsp;жизнь. Виноградники свои — 4 гектара на&nbsp;Таманском полуострове, в&nbsp;государственном реестре с&nbsp;1997 года, лозам больше 28 лет. Диплом менеджера пищевого производства, повышение квалификации в&nbsp;Ростове с&nbsp;технологами Фанагории и&nbsp;Абрау-Дюрсо. 15 дипломов с&nbsp;конкурсов виноделов. Член Ассоциации фермеров-виноделов Алексея Склярова.</p>
+    <p>Мой ученик взял первое место на&nbsp;всероссийском конкурсе. Приезжайте попробовать. Скептики, которые были уверены, что в&nbsp;Сочи настоящего вина нет, после дегустации говорят: «Я&nbsp;такое только за&nbsp;границей пробовал.»</p>
   </div>
 </section>
 
-<!-- 3.3 КАК МЫ ДЕЛАЕМ ВИНО -->
-<section class="two-col" style="background: var(--bg2);">
-  <div class="two-col-inner reverse">
-    <div class="col-text">
-      <p class="eyebrow">производство</p>
-      <h2 class="section-title">Как мы&nbsp;делаем вино</h2>
-      <p>Только виноград и&nbsp;дрожжи. Никаких добавок. Каждый сорт пробую лично, веду от&nbsp;начала до&nbsp;конца.</p>
-      <p>Каждый сезон — около 5 тонн винограда, 12–15 сортов вина. Настойки и&nbsp;чача. Семейное дело: кто в&nbsp;производстве, кто на&nbsp;дегустациях, кто в&nbsp;соцсетях.</p>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_186.jpg" alt="Гости на&nbsp;дегустации в&nbsp;погребе" loading="lazy"/>
+<!-- 3: ЧЕТВЁРТОЕ ПОКОЛЕНИЕ -->
+<section class="sec" style="background:var(--bg2)">
+  <div class="cnt">
+    <div class="two rev">
+      <div class="col-tx">
+        <h2>Четвёртое поколение</h2>
+        <p>Мне было три года, когда бабушка Иустинья впервые поставила меня рядом с&nbsp;собой. Она делала вино в&nbsp;этом доме — том самом, где сейчас усадьба. Потом отец. Потом&nbsp;я.</p>
+        <p>Я&nbsp;не&nbsp;выбирал виноделие. Оно было вокруг меня с&nbsp;рождения. Но&nbsp;диплом получил осознанно — менеджер пищевого производства. Поехал в&nbsp;Ростов на&nbsp;повышение квалификации, учился рядом с&nbsp;технологами Фанагории и&nbsp;Абрау-Дюрсо. Потому что одного чутья мало. Нужно понимать, что происходит в&nbsp;бутылке на&nbsp;уровне химии.</p>
+        <p>Сейчас четвёртое поколение. Сыну 18, он&nbsp;проводит дегустации сам. Дочери 20 — устроилась в&nbsp;«Мрию», лучшую винодельню страны.</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_535.jpg" alt="Роман в&nbsp;дегустационном зале" loading="lazy"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 3.4 ДЕГУСТАЦИОННЫЙ ЗАЛ -->
-<section class="tasting-section">
-  <div class="tasting-immersive">
-    <img class="tasting-bg" src="assets/photos/photo_230.jpg" alt="Дегустация в&nbsp;погребе при свечах" loading="lazy"/>
-    <div class="tasting-content">
-      <h2>Дегустационный зал и&nbsp;погреба</h2>
-      <p>Здесь храню то, что сделал своими руками. Приглашаю гостей, угощаю, рассказываю историю каждого сорта.</p>
-      <p>Дегустация — от&nbsp;лёгких белых к&nbsp;насыщенным красным. Сорта: Шардоне, Санджовезе, Каберне, Саперави, Рубин и&nbsp;другие.</p>
-      <p class="tasting-quote">Традиция: когда рождается сын, закладывают вино на&nbsp;его свадьбу. Мы&nbsp;закупориваем бутылки и&nbsp;опускаем в&nbsp;колодец (6–7°C). За&nbsp;годы — целая коллекция.</p>
+<!-- 4: КАК РОЖДАЕТСЯ ВИНО -->
+<section class="sec" style="background:var(--bg)">
+  <div class="cnt">
+    <div class="two">
+      <div class="col-tx">
+        <h2>Как рождается вино</h2>
+        <p>Весь путь от&nbsp;лозы до&nbsp;бутылки — вдвоём с&nbsp;женой. Я&nbsp;выращиваю виноград, собираю, давлю, ставлю на&nbsp;брожение, слежу, разливаю. Жена рисует этикетки. Два человека, ни&nbsp;одного посредника.</p>
+        <p>Винодельня в&nbsp;соседнем помещении — вы&nbsp;зайдёте и&nbsp;увидите, где и&nbsp;как рождается ваше вино. Это не&nbsp;бутылки на&nbsp;прилавке, за&nbsp;которыми непонятно что стоит.</p>
+        <p>Перед тем как войти в&nbsp;винодельню, я&nbsp;медитирую и&nbsp;слушаю классическую музыку. Каждое вино отражает настроение того, кто его делал. Под кавказские сорта играет грузинское многоголосие. Под европейские — Бах и&nbsp;Бетховен.</p>
+        <p>Я&nbsp;знаю вкус вина ещё до&nbsp;сбора урожая. По&nbsp;винограду на&nbsp;лозе определяю профиль, процент алкоголя и&nbsp;сахара. 52 года практики — рука чувствует.</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_260.jpg" alt="Виноградные лозы" loading="lazy"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 3.5 CTA -->
-<section class="cta-section">
-  <h2>Приезжайте попробовать</h2>
-  <p class="cta-sub">Запишитесь на&nbsp;дегустацию — позвоните или напишите нам.</p>
-  <a class="cta-phone" href="tel:+79186004869">+7-918-600-48-69 (Роман)</a>
-  <br/>
-  <a class="btn-white" href="contacts.html">Связаться с&nbsp;нами</a>
+<!-- 5: ЧЕСТНОСТЬ -->
+<section class="dark-sec">
+  <div class="dark-prose">
+    <h2>Скажу прямо</h2>
+    <p>Вино — это алкоголь, а&nbsp;алкоголь — это яд. Но&nbsp;он&nbsp;вам может очень сильно понравиться.</p>
+    <p>Теперь о&nbsp;том, что вам продают на&nbsp;рынках Сочи.</p>
+    <p>Хванчкара за&nbsp;500 рублей — это не&nbsp;вино. Хванчкара делается только в&nbsp;Грузии, в&nbsp;одном конкретном селении. С&nbsp;растаможкой и&nbsp;логистикой настоящая бутылка стоит 5–6 тысяч. Всё, что дешевле — ароматизаторы с&nbsp;красителями.</p>
+    <p>Кинзмараули с&nbsp;30% сахара и&nbsp;15% алкоголя? В&nbsp;природе такое невозможно. Это алкогольный коктейль, который не&nbsp;имеет отношения к&nbsp;виноделию.</p>
+    <p>90% «домашнего вина» в&nbsp;Сочи сделано так: купил ароматизаторы оптом, разлил, наклеил этикетку — и&nbsp;ты «винодел».</p>
+    <p>У&nbsp;меня по-другому. Если вино начинает портиться — снимаю партию и&nbsp;перегоняю в&nbsp;чачу. Даже если деньги потеряны. Не&nbsp;буду говорить гостю «это такой оттенок». Репутация — это то, что потом не&nbsp;купишь.</p>
+    <p>Красная линия: я&nbsp;никогда не&nbsp;буду продавать то, что не&nbsp;смогу дать своим детям. Семеро детей — самый строгий контроль качества.</p>
+  </div>
+</section>
+
+<!-- 6: ДЕГУСТАЦИЯ -->
+<section class="sec" style="background:var(--bg)">
+  <div class="cnt">
+    <div class="two rev">
+      <div class="col-tx">
+        <h2>Дегустация</h2>
+        <p>Приезжайте и&nbsp;попробуйте. Без спешки, без программы на&nbsp;время. Я&nbsp;расскажу про каждый сорт — откуда виноград, какой год, что чувствуется на&nbsp;языке.</p>
+        <p>Спускаемся в&nbsp;мой погреб. Здесь я&nbsp;храню то, что сделал своими руками. Колодец держит 6–7 градусов круглый год. Дегустация идёт от&nbsp;лёгких белых к&nbsp;насыщенным красным. Шардоне, Санджовезе, Каберне, Саперави, Рубин — и&nbsp;это не&nbsp;всё.</p>
+        <p>Многие приезжают скептиками. Уезжают с&nbsp;бутылками и&nbsp;фразой, которую я&nbsp;слышу каждую неделю: «Как мы&nbsp;теперь будем пить магазинное?»</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_349.jpg" alt="Дегустация за&nbsp;столом" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7: УПРАВЛЕНИЕ ОЖИДАНИЯМИ -->
+<section class="sec" style="background:var(--bg2)">
+  <div class="prose">
+    <h2>Мы — не&nbsp;Абрау-Дюрсо</h2>
+    <p>Люди иногда приезжают, ожидая большое предприятие с&nbsp;хостесом, огромными ёмкостями, бескрайними полями виноградников. А&nbsp;видят семейное подворье на&nbsp;полгектара.</p>
+    <p>Мы&nbsp;маленькие, домашние, компактные. Честно пишем это везде: частная семейная винодельня. Кто понял и&nbsp;остался — становится своим.</p>
+  </div>
+</section>
+
+<!-- 8: CTA -->
+<section class="cta-sec">
+  <h2>Запишитесь на&nbsp;дегустацию</h2>
+  <p>Позвоните или напишите — договоримся о&nbsp;дате.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; align-items:center; margin:32px 0 8px;">
+    <a class="cta-phone" href="tel:+79186004869" style="margin-bottom:0;">+7-918-600-48-69 (Роман)</a>
+    <a href="https://t.me/veslovskiy" target="_blank" rel="noreferrer" style="font-size:18px; color:#fff; font-weight:500; display:inline-flex; align-items:center; gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      Telegram: @veslovskiy
+    </a>
+    <p style="font-size:16px; color:rgba(255,255,255,.75); margin:0;">Сочи, Хостинский район, с.&nbsp;Прогресс, пер.&nbsp;Западный, 12</p>
+    <p style="font-size:14px; color:rgba(255,255,255,.55); margin:0;">Без выходных, по&nbsp;предварительной записи</p>
+  </div>
+  <a class="btn-w" href="contacts.html">Как нас найти</a>
 </section>
 
 </main>
 
-<!-- ФУТЕР -->
 <footer class="site-footer">
-  <div class="footer-main">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html">
-        <span class="footer-logo-main">Бабушкина Хата</span>
-        <span class="footer-logo-sub">Родовое имение Весловских</span>
-      </a>
-    </div>
-    <nav class="footer-nav">
-      <a href="usadba.html">Усадьба</a>
-      <span class="footer-sep">·</span>
-      <a href="vinodelnya.html">Винодельня</a>
-      <span class="footer-sep">·</span>
-      <a href="gallery.html">Галерея</a>
-      <span class="footer-sep">·</span>
-      <a href="reviews.html">Отзывы</a>
-      <span class="footer-sep">·</span>
-      <a href="contacts.html">Контакты</a>
+  <div class="f-main">
+    <a class="f-logo" href="index.html"><span class="f-logo-t">Бабушкина Хата</span><span class="f-logo-s">Родовое имение Весловских</span></a>
+    <nav class="f-nav">
+      <a href="usadba.html">Усадьба</a><span class="f-sep">·</span><a href="vinodelnya.html">Винодельня</a><span class="f-sep">·</span><a href="banquets.html">Банкеты</a><span class="f-sep">·</span><a href="photosessions.html">Фотосессии</a><span class="f-sep">·</span><a href="gallery.html">Галерея</a><span class="f-sep">·</span><a href="reviews.html">Отзывы</a><span class="f-sep">·</span><a href="contacts.html">Контакты</a>
     </nav>
-    <div class="footer-socials">
-      <a href="https://t.me/babushkinahata" target="_blank" rel="noreferrer" title="Telegram-канал" class="social-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-      </a>
-      <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="social-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-.9-1.49.3v1.414c0 .44-.24.7-.9.7-2.44 0-4.97-1.522-6.64-4.097-2.694-3.83-3.44-6.7-3.44-7.295 0-.36.13-.62.62-.62h1.744c.46 0 .63.21.81.7.88 2.52 2.36 4.737 2.97 4.737.23 0 .33-.1.33-.66V8.84c-.07-1.19-.69-1.29-.69-1.71 0-.22.18-.44.47-.44h2.74c.39 0 .53.21.53.65v3.52c0 .39.17.53.29.53.23 0 .42-.14.84-.56 1.3-1.46 2.23-3.7 2.23-3.7.12-.26.34-.5.8-.5h1.744c.52 0 .64.27.52.65-.22.99-2.33 3.98-2.33 3.98-.18.3-.25.43 0 .76.18.25.77.75 1.16 1.2.72.82 1.27 1.51 1.42 1.99.15.47-.1.71-.57.71z"/></svg>
-      </a>
-      <a href="https://wa.me/79186004869" target="_blank" rel="noreferrer" title="WhatsApp" class="social-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      </a>
+    <div class="f-soc">
+      <a href="https://t.me/veslovskiy" target="_blank" rel="noreferrer" title="Telegram" class="soc-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg></a>
+      <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="soc-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-.9-1.49.3v1.414c0 .44-.24.7-.9.7-2.44 0-4.97-1.522-6.64-4.097-2.694-3.83-3.44-6.7-3.44-7.295 0-.36.13-.62.62-.62h1.744c.46 0 .63.21.81.7.88 2.52 2.36 4.737 2.97 4.737.23 0 .33-.1.33-.66V8.84c-.07-1.19-.69-1.29-.69-1.71 0-.22.18-.44.47-.44h2.74c.39 0 .53.21.53.65v3.52c0 .39.17.53.29.53.23 0 .42-.14.84-.56 1.3-1.46 2.23-3.7 2.23-3.7.12-.26.34-.5.8-.5h1.744c.52 0 .64.27.52.65-.22.99-2.33 3.98-2.33 3.98-.18.3-.25.43 0 .76.18.25.77.75 1.16 1.2.72.82 1.27 1.51 1.42 1.99.15.47-.1.71-.57.71z"/></svg></a>
     </div>
-    </div>
-    <div class="footer-bottom">
-    <p>© 2025 Бабушкина Хата</p>
   </div>
+  <div class="f-bot"><p>© 2025 Бабушкина Хата</p></div>
 </footer>
 
 <script>
-document.querySelectorAll('p, h1, h2, h3').forEach(function(el) {
+document.querySelectorAll('p, h1, h2, h3').forEach(function(el){
   el.innerHTML = el.innerHTML.replace(/([^>\s])\s+(\S+)\s*$/, '$1\u00a0$2');
 });
-
-const header = document.getElementById('site-header');
-window.addEventListener('scroll', function() {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-const burgerBtn = document.getElementById('burger-btn');
-const mobileOverlay = document.getElementById('mobile-overlay');
-const mobilePanel = document.getElementById('mobile-panel');
-const mobileClose = document.getElementById('mobile-close');
-function openMenu() { mobileOverlay.classList.add('open'); mobilePanel.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { mobileOverlay.classList.remove('open'); mobilePanel.classList.remove('open'); document.body.style.overflow = ''; }
-burgerBtn.addEventListener('click', openMenu);
-mobileOverlay.addEventListener('click', closeMenu);
-mobileClose.addEventListener('click', closeMenu);
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+var burg=document.getElementById('burg'),ov=document.getElementById('mob-ov'),pn=document.getElementById('mob-pn'),cl=document.getElementById('mob-cl');
+function oM(){ov.classList.add('open');pn.classList.add('open');document.body.style.overflow='hidden';}
+function cM(){ov.classList.remove('open');pn.classList.remove('open');document.body.style.overflow='';}
+burg.addEventListener('click',oM);ov.addEventListener('click',cM);cl.addEventListener('click',cM);
 </script>
 </body>
 </html>

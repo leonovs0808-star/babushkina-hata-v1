@@ -3,398 +3,150 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Усадьба — Бабушкина Хата · Родовое имение Весловских · Сочи</title>
-<meta name="description" content="Хата-мазанка 1947 года, фруктовый сад, виноградники, банкетная беседка, старинные артефакты. История рода Весловских в горах над Сочи."/>
+<title>Усадьба — Бабушкина Хата · Сочи</title>
+<meta name="description" content="Хата-мазанка 1945 года, фруктовый сад, беседка для банкетов, деревенский дворик. Полгектара в горах над Сочи."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: #F7F6F3;
-  color: #2D2A27;
-  font-size: 18px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3, h4 { text-wrap: balance; }
+body { font-family: 'Inter', sans-serif; background: #F7F6F3; color: #2D2A27; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 img { display: block; max-width: 100%; }
 a { color: #C25D35; text-decoration: none; }
 a:hover { color: #A34D2B; }
-
-:root {
-  --bg: #F7F6F3;
-  --bg2: #EDEAE4;
-  --dark: #2C2420;
-  --text: #2D2A27;
-  --text2: #7A7067;
-  --accent: #C25D35;
-  --accent-hover: #A34D2B;
-  --border: #E0DCD6;
-  --container: 1200px;
-  --side: 80px;
-  --gap: 100px;
-}
+:root { --bg:#F7F6F3; --bg2:#EDEAE4; --dark:#2C2420; --text:#2D2A27; --text2:#7A7067; --accent:#C25D35; --accent-hover:#A34D2B; --border:#E0DCD6; --max:1200px; --side:80px; --gap:100px; }
 
 /* HEADER */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: #F7F6F3; height: 72px;
-  display: flex; align-items: center;
-  transition: box-shadow 0.2s;
-}
-.site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.header-inner {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
-}
-.logo { display: flex; flex-direction: column; line-height: 1.15; text-decoration: none; flex-shrink: 0; }
-.logo-main { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); }
-.logo-sub { font-size: 11px; color: var(--text2); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
-.main-nav { display: flex; align-items: center; gap: 28px; list-style: none; }
-.main-nav a { font-size: 15px; font-weight: 500; color: var(--text); transition: color 0.15s; white-space: nowrap; }
-.main-nav a:hover, .main-nav a.active { color: var(--accent); }
-.nav-cta {
-  background: var(--accent); color: #fff !important; padding: 10px 22px;
-  border-radius: 8px; font-weight: 600 !important; font-size: 15px !important;
-  transition: background 0.2s !important;
-}
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); height: 72px; display: flex; align-items: center; transition: box-shadow .2s; }
+.site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.h-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; flex-shrink: 0; }
+.logo-t { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); }
+.logo-s { font-size: 11px; color: var(--text2); letter-spacing: .04em; text-transform: uppercase; }
+.nav { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav a { font-size: 14px; font-weight: 500; color: var(--text); transition: color .15s; white-space: nowrap; }
+.nav a:hover, .nav a.active { color: var(--accent); }
+.nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; transition: background .2s !important; }
 .nav-cta:hover { background: var(--accent-hover) !important; }
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
-.burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.2s; }
-.mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(44,36,32,0.55); z-index: 200; }
-.mobile-nav-overlay.open { display: block; }
-.mobile-nav-panel {
-  position: fixed; top: 0; right: 0; bottom: 0; width: 280px;
-  background: var(--bg); z-index: 201; transform: translateX(100%); transition: transform 0.3s;
-  padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 8px;
-}
-.mobile-nav-panel.open { transform: translateX(0); }
-.mobile-nav-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
-.mobile-nav-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
-.mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); line-height: 1; }
+.burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+.mob-overlay { display: none; position: fixed; inset: 0; background: rgba(44,36,32,.55); z-index: 200; }
+.mob-overlay.open { display: block; }
+.mob-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--bg); z-index: 201; transform: translateX(100%); transition: transform .3s; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 8px; }
+.mob-panel.open { transform: translateX(0); }
+.mob-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
+.mob-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
+.mob-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); }
 
 /* HERO */
-.page-hero {
-  position: relative; height: 400px; margin-top: 72px;
-  display: flex; align-items: flex-end; overflow: hidden;
-}
-.page-hero-img { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; }
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
-.page-hero-content { position: relative; z-index: 2; padding: 0 var(--side) 52px; max-width: 860px; }
-.page-hero-content h1 {
-  font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700;
-  color: #fff; line-height: 1.15; margin-bottom: 14px;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
-}
-.page-hero-content p {
-  font-size: 18px; color: rgba(255,255,255,0.88); font-family: 'Inter', sans-serif; font-weight: 400;
-}
+.hero { position: relative; height: 70vh; min-height: 420px; margin-top: 72px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+.hero-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,.25) 50%, transparent 100%); }
+.hero-body { position: relative; z-index: 2; padding: 0 var(--side) 64px; max-width: 800px; }
+.hero-body h1 { font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 14px; text-shadow: 0 2px 16px rgba(0,0,0,.4); }
+.hero-body p { font-size: 20px; color: rgba(255,255,255,.88); }
 
-/* УТИЛИТЫ */
-.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--side); }
-.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text2); margin-bottom: 16px; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 28px; }
-.section-title-center { text-align: center; }
-.text-link { font-size: 16px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; margin-top: 12px; }
-.text-link:hover { gap: 8px; color: var(--accent-hover); }
-.btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: background 0.2s; }
-.btn-primary:hover { background: var(--accent-hover); color: #fff; }
-.btn-white { display: inline-block; background: #fff; color: var(--accent); padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all 0.2s; }
-.btn-white:hover { background: var(--bg); color: var(--accent-hover); }
+/* СЕКЦИИ */
+.sec { padding: var(--gap) 0; }
+.cnt { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); }
 
-/* ДВУХКОЛОНОЧНЫЕ БЛОКИ */
-.two-col {
-  padding: var(--gap) 0;
-}
-.two-col-inner {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  display: grid; grid-template-columns: 55fr 45fr; gap: 72px; align-items: center;
-}
-.two-col-inner.reverse { grid-template-columns: 45fr 55fr; }
-.two-col-inner.reverse .col-photo { order: -1; }
-.col-photo { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
-.col-photo img { width: 100%; height: 100%; object-fit: cover; }
-.col-photo.tall { aspect-ratio: 3/4; }
-.col-text p { font-size: 18px; color: var(--text); line-height: 1.65; max-width: 580px; margin-bottom: 18px; }
-.col-text p:last-of-type { margin-bottom: 0; }
+/* ДВУХКОЛОНОЧНЫЕ */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.two.rev .col-ph { order: -1; }
+.col-ph { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
+.col-ph img { width: 100%; height: 100%; object-fit: cover; }
+.col-tx h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 24px; }
+.col-tx p { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 18px; max-width: 540px; }
+.col-tx p:last-of-type { margin-bottom: 0; }
 
-/* ПОЛНОШИРИННЫЙ РАЗДЕЛИТЕЛЬ */
+/* ПОЛНОШИРИННОЕ ФОТО */
 .full-photo { height: 400px; overflow: hidden; }
-.full-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.full-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* АРТЕФАКТЫ */
-.artifacts-section { background: var(--bg2); padding: var(--gap) 0; }
-.artifacts-header { text-align: center; margin-bottom: 48px; }
-.artifacts-header p { color: var(--text2); font-size: 17px; max-width: 560px; margin: 0 auto; }
-.artifacts-grid {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-}
-.artifact-card { background: var(--bg); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-.artifact-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-.artifact-caption { padding: 18px 20px; font-size: 15px; color: var(--text2); font-style: italic; line-height: 1.5; }
-
-/* ИСТОРИЯ */
-.history-section { background: var(--bg); padding: var(--gap) 0; }
-.history-inner { max-width: 680px; margin: 0 auto; padding: 0 var(--side); }
-.history-inner h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 40px; }
-.history-inner p { font-size: 18px; color: var(--text); line-height: 1.7; margin-bottom: 24px; }
-.history-inner p:last-of-type { margin-bottom: 0; }
-
-/* НАСЛЕДИЕ */
-.heritage-section { background: var(--bg2); padding: var(--gap) 0; }
-.heritage-inner { max-width: 680px; margin: 0 auto; padding: 0 var(--side); text-align: center; }
-.heritage-inner h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 40px; }
-.heritage-inner p { font-size: 18px; color: var(--text); line-height: 1.7; margin-bottom: 24px; text-align: left; }
-
-/* ФИЛОСОФИЯ */
-.philosophy-section { background: var(--bg); padding: var(--gap) 0; }
-.philosophy-header { text-align: center; margin-bottom: 56px; }
-.philosophy-header h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text); }
-.philosophy-grid {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
-}
-.philosophy-block { padding: 36px; background: var(--bg2); border-radius: 12px; }
-.philosophy-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
-.philosophy-block p { font-size: 16px; color: var(--text2); line-height: 1.65; }
+/* ТЕКСТОВЫЙ БЛОК ПО ЦЕНТРУ */
+.text-block { max-width: 680px; margin: 0 auto; padding: 0 var(--side); }
+.text-block h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 28px; }
+.text-block p { font-size: 17px; color: var(--text); line-height: 1.75; margin-bottom: 20px; }
+.text-block p:last-of-type { margin-bottom: 0; }
 
 /* CTA */
-.cta-section { background: var(--accent); padding: 80px var(--side); text-align: center; }
-.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 36px; line-height: 1.3; }
+.cta-sec { background: var(--accent); padding: 80px var(--side); text-align: center; }
+.cta-sec h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+.cta-sec > p { font-size: 18px; color: rgba(255,255,255,.88); margin-bottom: 8px; }
+.cta-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 32px; }
+.cta-phone:hover { opacity: .85; color: #fff; }
+.btn-w { display: inline-block; background: #fff; color: var(--accent); padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all .2s; }
+.btn-w:hover { background: var(--bg); color: var(--accent-hover); }
 
-/* ФУТЕР КОМПАКТНЫЙ */
+/* ФУТЕР */
 .site-footer { background: var(--dark); padding: 40px 0 24px; }
-.footer-main {
-  max-width: var(--container); margin: 0 auto; padding: 0 var(--side);
-  display: grid; grid-template-columns: auto 1fr auto;
-  gap: 32px; align-items: center;
-}
-.footer-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
-.footer-logo-main { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
-.footer-logo-sub { font-size: 11px; color: #7A7067; letter-spacing: 0.04em; text-transform: uppercase; }
-.footer-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.footer-nav a { font-size: 14px; color: #E0DCD6; transition: color 0.15s; white-space: nowrap; }
-.footer-nav a:hover { color: #fff; }
-.footer-contacts { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.footer-contacts a, .footer-contacts span { font-size: 14px; color: #E0DCD6; white-space: nowrap; }
-.footer-contacts a { transition: color 0.15s; }
-.footer-contacts a:hover { color: #fff; }
-.footer-sep { color: #7A7067; font-size: 14px; }
-.footer-bottom {
-  max-width: var(--container); margin: 16px auto 0; padding: 16px var(--side) 0;
-  border-top: 1px solid rgba(224,220,214,0.1);
-}
-.footer-bottom p { font-size: 12px; color: #7A7067; }
+.f-main { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; }
+.f-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+.f-logo-t { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
+.f-logo-s { font-size: 11px; color: #7A7067; letter-spacing: .04em; text-transform: uppercase; }
+.f-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.f-nav a { font-size: 14px; color: #E0DCD6; transition: color .15s; white-space: nowrap; text-decoration: none; }
+.f-nav a:hover { color: #fff; }
+.f-sep { color: #7A7067; font-size: 14px; }
+.f-soc { display: flex; align-items: center; gap: 12px; }
+.soc-ic { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(224,220,214,.1); color: #E0DCD6; transition: all .2s; }
+.soc-ic:hover { background: rgba(224,220,214,.2); color: #fff; }
+.f-bot { max-width: var(--max); margin: 16px auto 0; padding: 16px var(--side) 0; border-top: 1px solid rgba(224,220,214,.1); }
+.f-bot p { font-size: 12px; color: #7A7067; }
 
-/* АДАПТИВНОСТЬ */
+/* АДАПТИВ */
+@media (max-width: 1199px) { :root { --side: 40px; } .two { gap: 40px; } .f-main { grid-template-columns: 1fr 1fr; } .f-main > :first-child { grid-column: 1/-1; } }
+
+/* Tablet */
 @media (max-width: 1199px) {
-  :root { --side: 40px; }
-  .two-col-inner { gap: 48px; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: 1 / -1; }
+  .nav { gap: 16px; }
+  .nav a { font-size: 13px; }
+  .nav-cta { display: none; }
 }
 @media (max-width: 767px) {
-  :root { --side: 24px; --gap: 56px; }
+  :root { --side: 16px; --gap: 56px; }
   .site-header { height: 60px; }
-  .main-nav { display: none; }
+  .nav { display: none; }
   .burger { display: flex; }
-  .page-hero { height: 300px; }
-  .page-hero-content h1 { font-size: 30px; }
-  .page-hero-content p { font-size: 16px; }
-  .two-col-inner, .two-col-inner.reverse { grid-template-columns: 1fr; gap: 32px; }
-  .two-col-inner.reverse .col-photo { order: 0; }
-  .col-photo.tall { aspect-ratio: 4/3; }
-  .col-text p { font-size: 16px; }
+  .h-inner { padding: 0 16px; }
+  .hero { height: 60vh; }
+  .hero-body h1 { font-size: 2rem; }
+  .hero-body p { font-size: 1rem; }
+  .two { grid-template-columns: 1fr; gap: 28px; }
+  .two.rev .col-ph { order: 0; }
+  .col-ph { aspect-ratio: 16/9; }
+  .col-tx h2, .text-block h2 { font-size: 26px; }
+  .col-tx p, .text-block p { font-size: 16px; }
   .full-photo { height: 240px; }
-  .section-title { font-size: 26px; }
-  .artifacts-grid { grid-template-columns: 1fr; }
-  .philosophy-grid { grid-template-columns: 1fr; }
-  .history-inner h2, .heritage-inner h2, .philosophy-header h2 { font-size: 26px; }
-  .cta-section h2 { font-size: 26px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .cta-sec { padding: 48px 16px; }
+  .cta-sec h2 { font-size: 26px; }
+  .cta-phone { font-size: 1.2rem; }
+  .f-main { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+  .f-nav, .f-soc { justify-content: center; }
+  .f-bot { text-align: center; }
 }
 
-.footer-socials { display: flex; align-items: center; gap: 12px; }
-.social-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(224,220,214,0.1); color: #E0DCD6; transition: all 0.2s; }
-.social-icon:hover { background: rgba(224,220,214,0.2); color: #fff; }
-
-/* === ГЛОБАЛЬНЫЙ МОБИЛЬНЫЙ ФИК (768px) === */
-@media (max-width: 768px) {
-  /* Общие отступы */
-  :root { --side: 16px !important; }
-  
-  /* Hero */
-  .page-hero { height: 60vh !important; min-height: 320px !important; }
-  .page-hero-content h1,
-  .page-hero-content h1,
-  h1 { font-size: 2rem !important; }
-  .page-hero-content p,
-  .hero-subtitle { font-size: 1rem !important; }
-  .page-hero-content { padding: 0 24px 40px !important; }
-  .hero-content { padding: 0 24px 52px !important; }
-  .hero-title { font-size: 2rem !important; }
-  .hero-subtitle { font-size: 1rem !important; }
-  .hero-desc { font-size: 1rem !important; }
-
-  /* Двухколоночные блоки */
-  .two-col-inner,
-  .two-col-inner.reverse,
-  .about-inner,
-  .trust-inner,
-  .contacts-inner,
-  .tasting-immersive {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-    padding: 40px 16px !important;
-  }
-  .two-col-inner.reverse .col-photo,
-  .about-photo { order: -1 !important; }
-  .col-photo,
-  .about-photo,
-  .trust-photo { aspect-ratio: 16/9 !important; width: 100% !important; }
-
-  /* Карточки */
-  .cards-grid,
-  .reviews-carousel,
-  .artifacts-grid,
-  .philosophy-grid { grid-template-columns: 1fr !important; }
-
-  /* Тексты */
-  body { font-size: 16px !important; }
-  .col-text p,
-  .about-text p,
-  .history-inner p,
-  .heritage-inner p { font-size: 16px !important; }
-  .section-title,
-  h2 { font-size: 1.6rem !important; }
-  h3 { font-size: 1.2rem !important; }
-
-  /* Секции */
-  .tips-inner,
-  .directions-inner,
-  .history-inner,
-  .heritage-inner,
-  .text-center-inner { padding: 0 16px !important; }
-  .text-center-section,
-  .tips-section,
-  .directions-section { padding: 40px 0 !important; }
-
-  /* Footer */
-  .footer-main {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    text-align: center !important;
-  }
-  .footer-nav,
-  .footer-socials,
-  .footer-contacts-row { justify-content: center !important; flex-wrap: wrap !important; }
-  .footer-bottom { text-align: center !important; }
-
-  /* Галерея */
-  .gallery-grid { columns: 1 !important; }
-  .gallery-header { padding: 40px 16px 32px !important; }
-  .gallery-header h1 { font-size: 1.8rem !important; }
-  .filters { padding: 0 16px 32px !important; }
-
-  /* CTA */
-  .cta-section { padding: 48px 16px !important; }
-  .cta-section h2 { font-size: 1.6rem !important; }
-  .cta-phone { font-size: 1.2rem !important; }
-
-  /* Contacts */
-  .contacts-map iframe { height: 240px !important; }
-  .contacts-text h1 { font-size: 2rem !important; }
-  .phone-link { font-size: 1.5rem !important; }
-
-  /* page-wrap */
-  .page-wrap { padding: 40px 16px !important; }
-  .page-header h1 { font-size: 2rem !important; }
-}
-
-/* === МОБИЛЬНАЯ ШАПКА — КРИТИЧЕСКИЙ ФИК === */
-@media screen and (max-width: 768px) {
-  .main-nav { display: none !important; }
-  .burger { display: flex !important; }
-  .site-header { height: 60px !important; }
-  .header-inner { padding: 0 16px !important; }
-
-  /* Reels — адаптив */
-  .reel-thumb {
-    flex: 0 0 140px !important;
-    height: 240px !important;
-  }
-  .reels-wrapper { padding: 0 16px !important; }
-
-  /* Горизонтальные видео — 1 колонка */
-  .video-horiz {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Hero */
-  .hero { height: 70vh !important; }
-  .hero-content { padding: 0 16px 52px !important; }
-  .hero-title { font-size: 2rem !important; }
-  .hero-subtitle { font-size: 1rem !important; }
-  .hero-desc { font-size: 1rem !important; }
-
-  /* Карточки */
-  .cards-grid {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Знакомство */
-  .about-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-  .about-photo { aspect-ratio: 16/9 !important; }
-
-  /* Доверие */
-  .trust-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-
-  /* Отзывы */
-  .reviews-carousel {
-    grid-template-columns: 1fr !important;
-    padding: 0 16px !important;
-  }
-
-  /* Контакты */
-  .contacts-inner {
-    grid-template-columns: 1fr !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-
-  /* Цитата */
-  .quote-text { font-size: 1.5rem !important; }
-  .quote-section { padding: 60px 16px !important; }
+/* Small screens */
+@media (max-width: 374px) {
+  .hero-body h1, .page-hero-content h1 { font-size: 1.7rem !important; }
+  .logo-t { font-size: 17px; }
 }
 </style>
 </head>
 <body>
 
 <!-- ХЕДЕР -->
-<header class="site-header" id="site-header">
-  <div class="header-inner">
+<header class="site-header" id="hdr">
+  <div class="h-inner">
     <a class="logo" href="index.html">
-      <span class="logo-main">Бабушкина Хата</span>
-      <span class="logo-sub">Родовое имение Весловских · с&nbsp;1947</span>
+      <span class="logo-t">Бабушкина Хата</span>
+      <span class="logo-s">Родовое имение Весловских · с&nbsp;1945</span>
     </a>
     <nav>
-      <ul class="main-nav">
+      <ul class="nav">
         <li><a href="usadba.html" class="active">Усадьба</a></li>
         <li><a href="vinodelnya.html">Винодельня</a></li>
         <li><a href="banquets.html">Банкеты</a></li>
@@ -402,18 +154,15 @@ a:hover { color: #A34D2B; }
         <li><a href="gallery.html">Галерея</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a class="nav-cta" href="contacts.html">Связаться с нами</a></li>
+        <li><a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a></li>
       </ul>
     </nav>
-    <button class="burger" id="burger-btn" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="burger" id="burg" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<div class="mobile-nav-overlay" id="mobile-overlay"></div>
-<nav class="mobile-nav-panel" id="mobile-panel">
-  <button class="mobile-close" id="mobile-close">×</button>
+<div class="mob-overlay" id="mob-ov"></div>
+<nav class="mob-panel" id="mob-pn">
+  <button class="mob-close" id="mob-cl">×</button>
   <a href="usadba.html">Усадьба</a>
   <a href="vinodelnya.html">Винодельня</a>
   <a href="banquets.html">Банкеты</a>
@@ -421,244 +170,142 @@ a:hover { color: #A34D2B; }
   <a href="gallery.html">Галерея</a>
   <a href="reviews.html">Отзывы</a>
   <a href="contacts.html">Контакты</a>
-  <a class="nav-cta" href="contacts.html">Связаться с нами</a>
+  <a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a>
 </nav>
 
 <main>
 
-<!-- 2.1 HERO -->
-<section class="page-hero">
-  <img class="page-hero-img" src="assets/photos/photo_500.jpg" alt="Семья Весловских у&nbsp;хаты" loading="eager"/>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
+<!-- БЛОК 1: HERO -->
+<section class="hero">
+  <img src="assets/photos/photo_500.jpg" alt="Семья Весловских у&nbsp;хаты" loading="eager"/>
+  <div class="hero-grad"></div>
+  <div class="hero-body">
     <h1>Место, которое я&nbsp;восстановил для своей семьи</h1>
-    <p>Полгектара в&nbsp;горах Сочи. Здесь каждый уголок мне дорог.</p>
+    <p>Полгектара в&nbsp;горах Сочи. Здесь каждый уголок мне&nbsp;дорог.</p>
   </div>
 </section>
 
-<!-- 2.2 ХАТА-МУЗЕЙ -->
-<section class="two-col" style="background: var(--bg);">
-  <div class="two-col-inner">
-    <div class="col-text">
-      <p class="eyebrow">хата-музей</p>
-      <h2 class="section-title">Хата-музей</h2>
-      <p>Это дом моей бабушки Иустиньи, построенный в&nbsp;1947 году из&nbsp;сарая, глины и&nbsp;соломы. Я&nbsp;восстановил её, сохранил печь, старый пол, каркас. Здесь всё, что помню с&nbsp;детства: керосиновые лампы, посуда, утварь. Некоторые вещи искал по&nbsp;всей стране — на&nbsp;антикварных аукционах, через знакомых старьёвщиков из&nbsp;Тулы, из&nbsp;Родников.</p>
-      <p>Нетипичное для Кавказа строение — бабушка была украинкой и&nbsp;принесла колорит своей эпохи сюда. Здесь нет стёкол и&nbsp;заградительных ленточек. Это музей, в&nbsp;котором можно всё потрогать, прожить своё детство, вернуться к&nbsp;базовым настройкам.</p>
-      <p>Среди экспонатов: Псалтырь 1723 года (Киево-Печерская лавра), плюшевый ковёр с&nbsp;оленями, советские ёлочные игрушки, казачий нож пластуна, армянская маслобойка от&nbsp;соседки бабушки Гегец, патефон 1939 года.</p>
-      <p>«Новостные каналы назвали это место машиной&nbsp;времени.»</p>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_204.jpg" alt="Интерьер хаты-музея: стол с&nbsp;выпечкой, самовар, ковры, вышиванки" loading="lazy"/>
+<!-- БЛОК 2: ХАТА-МУЗЕЙ -->
+<section class="sec" style="background:var(--bg)">
+  <div class="cnt">
+    <div class="two rev">
+      <div class="col-tx">
+        <h2>Хата-музей</h2>
+        <p>Дом построен в&nbsp;1945 году. Моя бабушка Иустинья жила здесь до&nbsp;последнего дня.</p>
+        <p>Бабушка была украинкой. Она жила здесь до&nbsp;последнего дня — и&nbsp;всё, что вы&nbsp;видите, принадлежало ей.</p>
+        <p>Сейчас это музей, но&nbsp;не&nbsp;тот, где стёкла и&nbsp;ленточки. Здесь можно всё потрогать. Сесть на&nbsp;лавку, взять в&nbsp;руки кованый утюг, открыть сундук. Псалтырь 1723 года. Казачий нож пластуна. Армянская маслобойка. Патефон 1939 года. Каждая вещь из&nbsp;этого дома. Ничего не&nbsp;привезено для&nbsp;красоты.</p>
+        <p>Люди старше тридцати заходят — и&nbsp;замолкают. Запах, интерьер, ощущение. Через минуту они уже не&nbsp;здесь. Они маленькие, у&nbsp;бабушки, и&nbsp;всё хорошо. Мы&nbsp;это видим каждый&nbsp;день.</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_204.jpg" alt="Интерьер хаты-музея: стол, самовар, ковры" loading="lazy"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2.3 ФОТО-РАЗДЕЛИТЕЛЬ -->
+<!-- БЛОК 3: ФОТО-РАЗДЕЛИТЕЛЬ -->
 <div class="full-photo">
-  <img src="assets/photos/photo_349.jpg" alt="Летний вечер: гости за&nbsp;длинным столом у&nbsp;белой стены хаты" loading="lazy"/>
+  <img src="assets/photos/photo_349.jpg" alt="Летний вечер, гости за&nbsp;столом" loading="lazy"/>
 </div>
 
-<!-- 2.4 ФРУКТОВЫЙ САД -->
-<section class="two-col" style="background: var(--bg2);">
-  <div class="two-col-inner reverse">
-    <div class="col-text">
-      <p class="eyebrow">территория</p>
-      <h2 class="section-title">Фруктовый сад</h2>
-      <p>Яблони, груши, черешня, хурма, мушмула, киви, кизил, гранат, инжир, фейхоа, шелковица. Каждый месяц что-то зреет. Гости могут сорвать фрукт с&nbsp;ветки — для этого оно и&nbsp;посажено.</p>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_460.jpg" alt="Территория усадьбы: зелень, виноградник, ульи, пальма" loading="lazy"/>
-    </div>
-  </div>
-</section>
-
-<!-- 2.5 ВИНОГРАДНИКИ -->
-<section class="two-col" style="background: var(--bg);">
-  <div class="two-col-inner">
-    <div class="col-text">
-      <p class="eyebrow">виноградники</p>
-      <h2 class="section-title">Виноградники</h2>
-      <p>На&nbsp;территории растут столовые сорта и&nbsp;Изабелла — тот самый, из&nbsp;которого бабушка делала вино. Мини-виноградник с&nbsp;европейскими сортами: Каберне, Саперави, Санджовезе. Основные виноградники — на&nbsp;Тамани.</p>
-      <a class="text-link" href="vinodelnya.html">Подробнее о&nbsp;нашей винодельне →</a>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_260.jpg" alt="Виноградные лозы, зелень" loading="lazy"/>
+<!-- БЛОК 4: БЕСЕДКА -->
+<section class="sec" style="background:var(--bg2)">
+  <div class="cnt">
+    <div class="two">
+      <div class="col-tx">
+        <h2>Беседка и&nbsp;банкетный зал</h2>
+        <p>Здесь проходят банкеты. Помпейская печь, вертел, мангал. Всё на&nbsp;открытом воздухе, всё на&nbsp;виду.</p>
+        <p>При банкете территория закрывается под одну компанию. Ни&nbsp;одного чужого человека. Подготовка начинается за&nbsp;несколько дней. В&nbsp;этот день здесь только вы&nbsp;и&nbsp;наша&nbsp;семья.</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_368.jpg" alt="Банкетная беседка" loading="lazy"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2.6 БЕСЕДКА -->
-<section class="two-col" style="background: var(--bg2);">
-  <div class="two-col-inner reverse">
-    <div class="col-text">
-      <p class="eyebrow">банкетная площадка</p>
-      <h2 class="section-title">Беседка для банкетов</h2>
-      <p>Вмещает до&nbsp;30 человек. Летом — сплит-система, зимой — живой огонь. Хозяин готовит сам — на&nbsp;огне, в&nbsp;печи, в&nbsp;коптильне.</p>
-      <a class="text-link" href="guests.html">Организовать праздник →</a>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_368.jpg" alt="Банкетная беседка: резная деревянная мебель, длинный стол" loading="lazy"/>
-    </div>
-  </div>
-</section>
-
-<!-- 2.7 ДВОРИК -->
-<section class="two-col" style="background: var(--bg);">
-  <div class="two-col-inner">
-    <div class="col-text">
-      <p class="eyebrow">деревенский дворик</p>
-      <h2 class="section-title">Деревенский дворик</h2>
-      <p>Собаки, куры, гуси, кошки, кролики. Дети с&nbsp;ними играют, собирают яйца. Деревенская жизнь, без которой я&nbsp;себя не&nbsp;представляю.</p>
-    </div>
-    <div class="col-photo">
-      <img src="assets/photos/photo_501.jpg" alt="Дворик усадьбы" loading="lazy"/>
+<!-- БЛОК 5: САД -->
+<section class="sec" style="background:var(--bg)">
+  <div class="cnt">
+    <div class="two rev">
+      <div class="col-tx">
+        <h2>Сад и&nbsp;дворик</h2>
+        <p>Фруктовый сад, куры, собаки, коты. Дети бегают. Это не&nbsp;парк и&nbsp;не&nbsp;декорация. Мы&nbsp;тут живём. Семья из&nbsp;девяти человек, каждый&nbsp;день.</p>
+      </div>
+      <div class="col-ph">
+        <img src="assets/photos/photo_485.jpg" alt="Мастер-класс в&nbsp;саду" loading="lazy"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2.8 АРТЕФАКТЫ -->
-<section class="artifacts-section">
-  <div class="container">
-    <div class="artifacts-header">
-      <h2 class="section-title section-title-center">Старинные артефакты</h2>
-      <p>Вещи, которые я&nbsp;собирал годами. Каждая со&nbsp;своей историей.</p>
-    </div>
-  </div>
-  <div class="artifacts-grid">
-    <div class="artifact-card">
-      <img src="assets/photos/photo_402.jpg" alt="Медные полковые котлы" loading="lazy"/>
-      <p class="artifact-caption">Медные полковые котлы (маркировка 1892&nbsp;года)</p>
-    </div>
-    <div class="artifact-card">
-      <img src="assets/photos/photo_196.jpg" alt="Аламбик" loading="lazy"/>
-      <p class="artifact-caption">Аламбик (около 300&nbsp;лет)</p>
-    </div>
-    <div class="artifact-card">
-      <img src="assets/photos/photo_205.jpg" alt="Мельница-колодец с коллекцией вин" loading="lazy"/>
-      <p class="artifact-caption">Мельница-колодец с&nbsp;коллекцией вин за&nbsp;14&nbsp;лет</p>
-    </div>
+<!-- БЛОК 6: ОЩУЩЕНИЕ -->
+<section class="sec" style="background:var(--bg2)">
+  <div class="text-block">
+    <h2>Как это ощущается</h2>
+    <p>Гости приезжают, заходят в&nbsp;хату — и&nbsp;через минуту границы стираются. Нет ощущения «мы&nbsp;на&nbsp;экскурсии». Есть ощущение «мы&nbsp;приехали к&nbsp;своим».</p>
+    <p>Одна гостья сказала: «Мы&nbsp;забыли, каково это — приезжать к&nbsp;своим близким родственникам.»</p>
+    <p>Другая: «Мы&nbsp;прожили этот день с&nbsp;вами и&nbsp;благодарим за&nbsp;ту&nbsp;атмосферу и&nbsp;то&nbsp;состояние, которое вы&nbsp;нам&nbsp;дали.»</p>
+    <p>Люди приезжают один раз — и&nbsp;возвращаются через пять-восемь лет. Не&nbsp;за&nbsp;повторной услугой. За&nbsp;повторным ощущением.</p>
   </div>
 </section>
 
-<!-- 2.9 ПАНОРАМНЫЙ РАЗДЕЛИТЕЛЬ -->
-<div class="full-photo">
-  <img src="assets/photos/photo_534.jpg" alt="Панорамный закат над горами и&nbsp;морем" loading="lazy"/>
-</div>
-
-<!-- 2.10 ИСТОРИЯ -->
-<section class="history-section">
-  <div class="history-inner">
-    <h2>Как всё зарождалось</h2>
-    <p>Здравствуйте. Я — Роман Васильевич Весловский — хозяин усадьбы «Бабушкина Хата». Родился и&nbsp;вырос в&nbsp;этом самом селе, в&nbsp;горах Сочи. Провёл детство здесь, в&nbsp;этой хате, которую вы&nbsp;видите на&nbsp;фото. Её построила моя бабушка Иустинья в&nbsp;1947&nbsp;году.</p>
-    <p>Бабушка родилась в&nbsp;Омской области, в&nbsp;селе Воскресенское. В&nbsp;1927 году её отца раскулачили, семье пришлось уехать. Так она оказалась в&nbsp;Сочи, где начинали развивать сельское хозяйство. Бабушка устроилась в&nbsp;Мацестинский чайсовхоз, за&nbsp;заслуги ей дали табачный сарай. Она разобрала его на&nbsp;доски, замесила глину с&nbsp;соломой и&nbsp;слепила эту хату-мазанку. В&nbsp;ней и&nbsp;прошло моё детство.</p>
-    <p>Я рос здесь, собирал урожай, помогал по&nbsp;хозяйству. Бабушка научила работать с&nbsp;землёй, а&nbsp;вино я&nbsp;впервые делал именно с&nbsp;ней — из&nbsp;Изабеллы за&nbsp;оградой.</p>
-    <p>Потом жизнь забросила далеко. В&nbsp;14 лет уехал один в&nbsp;Ташкент, работал в&nbsp;цирке. Армия, работа, торговое предприятие в&nbsp;Сочи. Жил в&nbsp;городе, растил детей. Вроде всё было, а&nbsp;чего-то не&nbsp;хватало.</p>
-    <p>В начале 2000-х предприятие закрылось. Продал всё, собрал семью и&nbsp;переехал сюда. В&nbsp;эту хату. Жили здесь, пока строил дом.</p>
-    <p>Хата была в&nbsp;аварийном состоянии. Глина осыпалась, пол прогнил. Оставил каркас, укрепил, перебрал по&nbsp;брёвнышку. Печь отреставрировал — работает до&nbsp;сих пор, иногда ночую в&nbsp;хате для души. Собирал предметы по&nbsp;всей стране — именно то, что было в&nbsp;детстве.</p>
-    <p>Участок заросший, запущенный. Выкорчёвывал сорняки, высаживал сад. Сначала для себя. Потом соседи, друзья, сарафанное радио, блогеры, телевидение. Новостные каналы назвали «машиной времени». Когда спрашивали название музея, отвечал: «Да какой музей? Это бабушкина хата». Так и&nbsp;приклеилось.</p>
-    <p>Сегодня здесь живёт семья, растут дети, зреет виноград, приезжают гости.</p>
+<!-- БЛОК 7: CTA -->
+<section class="cta-sec">
+  <h2>Приезжайте — покажу всё лично</h2>
+  <p>Позвоните или напишите — договоримся о&nbsp;дате.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; align-items:center; margin:32px 0 8px;">
+    <a class="cta-phone" href="tel:+79186004869" style="margin-bottom:0;">+7-918-600-48-69 (Роман)</a>
+    <a href="https://t.me/veslovskiy" target="_blank" rel="noreferrer" style="font-size:18px; color:#fff; font-weight:500; display:inline-flex; align-items:center; gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      Telegram: @veslovskiy
+    </a>
+    <p style="font-size:16px; color:rgba(255,255,255,.75); margin:0;">Сочи, Хостинский район, с.&nbsp;Прогресс, пер.&nbsp;Западный, 12</p>
+    <p style="font-size:14px; color:rgba(255,255,255,.55); margin:0;">Без выходных, по&nbsp;предварительной записи</p>
   </div>
-</section>
-
-<!-- 2.11 НАСЛЕДИЕ -->
-<section class="heritage-section">
-  <div class="heritage-inner">
-    <h2>Не наследство, а&nbsp;наследие</h2>
-    <p>Восстановил родословную. Обновил родовое кладбище — 13 памятников. Восстановил бабушкину хату. Про нас снимают федеральные каналы. Прославляю свой род — чувствую, что на&nbsp;верном пути.</p>
-    <p>Каждый, кто входит в&nbsp;эту хату, умолкает на&nbsp;минуту — вспомнить своих. Я&nbsp;не&nbsp;хочу оставлять наследство. Я&nbsp;оставляю наследие.</p>
-  </div>
-</section>
-
-<!-- 2.12 ФИЛОСОФИЯ -->
-<section class="philosophy-section">
-  <div class="philosophy-header">
-    <h2>Чем я&nbsp;живу</h2>
-  </div>
-  <div class="philosophy-grid">
-    <div class="philosophy-block">
-      <h3>Семья и&nbsp;корни</h3>
-      <p>Семерых детей воспитал. Младшие растут здесь. Главное — уважение к&nbsp;роду, к&nbsp;фамилии, к&nbsp;памяти предков.</p>
-    </div>
-    <div class="philosophy-block">
-      <h3>Труд и&nbsp;земля</h3>
-      <p>Дети выходят на&nbsp;участок и&nbsp;забывают про гаджеты. Собирают яйца, болтают с&nbsp;курочками. Личный пример воспитывает лучше слов.</p>
-    </div>
-    <div class="philosophy-block">
-      <h3>Натуральность</h3>
-      <p>Всё без обмана, без химии. Живой продукт лучше искусственного. Дело чести.</p>
-    </div>
-    <div class="philosophy-block">
-      <h3>Гостеприимство</h3>
-      <p>Люблю принимать гостей. Когда люди уезжают с&nbsp;теплом в&nbsp;душе — значит, всё правильно.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 2.13 CTA -->
-<section class="cta-section">
-  <h2>Приезжайте в&nbsp;гости — всё покажу лично.</h2>
-  <a class="btn-white" href="contacts.html">Связаться с&nbsp;нами</a>
+  <a class="btn-w" href="contacts.html">Как нас найти</a>
 </section>
 
 </main>
 
 <!-- ФУТЕР -->
 <footer class="site-footer">
-  <div class="footer-main">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html">
-        <span class="footer-logo-main">Бабушкина Хата</span>
-        <span class="footer-logo-sub">Родовое имение Весловских</span>
-      </a>
-    </div>
-    <nav class="footer-nav">
-      <a href="usadba.html">Усадьба</a>
-      <span class="footer-sep">·</span>
-      <a href="vinodelnya.html">Винодельня</a>
-      <span class="footer-sep">·</span>
-      <a href="gallery.html">Галерея</a>
-      <span class="footer-sep">·</span>
-      <a href="reviews.html">Отзывы</a>
-      <span class="footer-sep">·</span>
+  <div class="f-main">
+    <a class="f-logo" href="index.html">
+      <span class="f-logo-t">Бабушкина Хата</span>
+      <span class="f-logo-s">Родовое имение Весловских</span>
+    </a>
+    <nav class="f-nav">
+      <a href="usadba.html">Усадьба</a><span class="f-sep">·</span>
+      <a href="vinodelnya.html">Винодельня</a><span class="f-sep">·</span>
+      <a href="banquets.html">Банкеты</a><span class="f-sep">·</span>
+      <a href="photosessions.html">Фотосессии</a><span class="f-sep">·</span>
+      <a href="gallery.html">Галерея</a><span class="f-sep">·</span>
+      <a href="reviews.html">Отзывы</a><span class="f-sep">·</span>
       <a href="contacts.html">Контакты</a>
     </nav>
-    <div class="footer-socials">
-      <a href="https://t.me/babushkinahata" target="_blank" rel="noreferrer" title="Telegram-канал" class="social-icon">
+    <div class="f-soc">
+      <a href="https://t.me/veslovskiy" target="_blank" rel="noreferrer" title="Telegram" class="soc-ic">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
       </a>
-      <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="social-icon">
+      <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="soc-ic">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-.9-1.49.3v1.414c0 .44-.24.7-.9.7-2.44 0-4.97-1.522-6.64-4.097-2.694-3.83-3.44-6.7-3.44-7.295 0-.36.13-.62.62-.62h1.744c.46 0 .63.21.81.7.88 2.52 2.36 4.737 2.97 4.737.23 0 .33-.1.33-.66V8.84c-.07-1.19-.69-1.29-.69-1.71 0-.22.18-.44.47-.44h2.74c.39 0 .53.21.53.65v3.52c0 .39.17.53.29.53.23 0 .42-.14.84-.56 1.3-1.46 2.23-3.7 2.23-3.7.12-.26.34-.5.8-.5h1.744c.52 0 .64.27.52.65-.22.99-2.33 3.98-2.33 3.98-.18.3-.25.43 0 .76.18.25.77.75 1.16 1.2.72.82 1.27 1.51 1.42 1.99.15.47-.1.71-.57.71z"/></svg>
       </a>
-      <a href="https://wa.me/79186004869" target="_blank" rel="noreferrer" title="WhatsApp" class="social-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      </a>
     </div>
-    </div>
-    <div class="footer-bottom">
-    <p>© 2025 Бабушкина Хата</p>
   </div>
+  <div class="f-bot"><p>© 2025 Бабушкина Хата</p></div>
 </footer>
 
 <script>
-// Фикс вдов — последнее слово привязываем к предыдущему
-document.querySelectorAll('p, h1, h2, h3').forEach(function(el) {
+document.querySelectorAll('p, h1, h2, h3').forEach(function(el){
   el.innerHTML = el.innerHTML.replace(/([^>\s])\s+(\S+)\s*$/, '$1\u00a0$2');
 });
-
-const header = document.getElementById('site-header');
-window.addEventListener('scroll', function() {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-const burgerBtn = document.getElementById('burger-btn');
-const mobileOverlay = document.getElementById('mobile-overlay');
-const mobilePanel = document.getElementById('mobile-panel');
-const mobileClose = document.getElementById('mobile-close');
-function openMenu() { mobileOverlay.classList.add('open'); mobilePanel.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { mobileOverlay.classList.remove('open'); mobilePanel.classList.remove('open'); document.body.style.overflow = ''; }
-burgerBtn.addEventListener('click', openMenu);
-mobileOverlay.addEventListener('click', closeMenu);
-mobileClose.addEventListener('click', closeMenu);
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+var burg=document.getElementById('burg'),ov=document.getElementById('mob-ov'),pn=document.getElementById('mob-pn'),cl=document.getElementById('mob-cl');
+function oM(){ov.classList.add('open');pn.classList.add('open');document.body.style.overflow='hidden';}
+function cM(){ov.classList.remove('open');pn.classList.remove('open');document.body.style.overflow='';}
+burg.addEventListener('click',oM);ov.addEventListener('click',cM);cl.addEventListener('click',cM);
 </script>
 </body>
 </html>

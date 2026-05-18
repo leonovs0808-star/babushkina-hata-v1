@@ -7,7 +7,7 @@
 <meta name="description" content="Фотогалерея усадьбы Бабушкина Хата: усадьба, семья, гости, природа, мероприятия."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -31,7 +31,7 @@ a:hover { color: #A34D2B; }
 .site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 .header-inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: flex; flex-direction: column; line-height: 1.15; text-decoration: none; flex-shrink: 0; cursor: pointer; }
-.logo-main { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); }
+.logo-main { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); }
 .logo-sub { font-size: 11px; color: var(--text2); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
 .main-nav { display: flex; align-items: center; gap: 28px; list-style: none; }
 .main-nav a { font-size: 15px; font-weight: 500; color: var(--text); transition: color 0.15s; white-space: nowrap; }
@@ -56,7 +56,7 @@ a:hover { color: #A34D2B; }
   text-align: center;
 }
 .gallery-header h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 48px; font-weight: 700; color: var(--text);
   margin-bottom: 12px; line-height: 1.2;
 }
@@ -151,7 +151,7 @@ a:hover { color: #A34D2B; }
   gap: 32px; align-items: center;
 }
 .footer-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
-.footer-logo-main { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
+.footer-logo-main { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: #E0DCD6; }
 .footer-logo-sub { font-size: 11px; color: #7A7067; letter-spacing: 0.04em; text-transform: uppercase; }
 .footer-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .footer-nav a { font-size: 14px; color: #E0DCD6; transition: color 0.15s; white-space: nowrap; }
@@ -174,11 +174,19 @@ a:hover { color: #A34D2B; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .nav { gap: 16px; }
+  .nav a { font-size: 13px; }
+  .nav-cta { display: none; }
+}
 @media (max-width: 767px) {
   :root { --side: 24px; }
   .site-header { height: 60px; }
   .main-nav { display: none; }
   .burger { display: flex; }
+  .h-inner { padding: 0 16px; }
   .gallery-header { padding-top: 56px; }
   .gallery-header h1 { font-size: 30px; }
   .gallery-grid { columns: 1; }
@@ -350,6 +358,12 @@ a:hover { color: #A34D2B; }
   .quote-text { font-size: 1.5rem !important; }
   .quote-section { padding: 60px 16px !important; }
 }
+
+/* Small screens */
+@media (max-width: 374px) {
+  .hero-body h1, .page-hero-content h1 { font-size: 1.7rem !important; }
+  .logo-t { font-size: 17px; }
+}
 </style>
 </head>
 <body>
@@ -359,7 +373,7 @@ a:hover { color: #A34D2B; }
   <div class="header-inner">
     <a class="logo" href="index.html">
       <span class="logo-main">Бабушкина Хата</span>
-      <span class="logo-sub">Родовое имение Весловских · с&nbsp;1947</span>
+      <span class="logo-sub">Родовое имение Весловских · с&nbsp;1945</span>
     </a>
     <nav>
       <ul class="main-nav">
@@ -534,15 +548,13 @@ a:hover { color: #A34D2B; }
       <a href="contacts.html">Контакты</a>
     </nav>
     <div class="footer-socials">
-      <a href="https://t.me/babushkinahata" target="_blank" rel="noreferrer" title="Telegram-канал" class="social-icon">
+      <a href="https://t.me/veslovskiy" target="_blank" rel="noreferrer" title="Telegram-канал" class="social-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
       </a>
       <a href="https://vk.com/public211361808" target="_blank" rel="noreferrer" title="ВКонтакте" class="social-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-.9-1.49.3v1.414c0 .44-.24.7-.9.7-2.44 0-4.97-1.522-6.64-4.097-2.694-3.83-3.44-6.7-3.44-7.295 0-.36.13-.62.62-.62h1.744c.46 0 .63.21.81.7.88 2.52 2.36 4.737 2.97 4.737.23 0 .33-.1.33-.66V8.84c-.07-1.19-.69-1.29-.69-1.71 0-.22.18-.44.47-.44h2.74c.39 0 .53.21.53.65v3.52c0 .39.17.53.29.53.23 0 .42-.14.84-.56 1.3-1.46 2.23-3.7 2.23-3.7.12-.26.34-.5.8-.5h1.744c.52 0 .64.27.52.65-.22.99-2.33 3.98-2.33 3.98-.18.3-.25.43 0 .76.18.25.77.75 1.16 1.2.72.82 1.27 1.51 1.42 1.99.15.47-.1.71-.57.71z"/></svg>
       </a>
-      <a href="https://wa.me/79186004869" target="_blank" rel="noreferrer" title="WhatsApp" class="social-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      </a>
+      
     </div>
     </div>
     <div class="footer-bottom">
