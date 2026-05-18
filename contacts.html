@@ -4,21 +4,20 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Как нас найти — Бабушкина Хата · Сочи</title>
-<meta name="description" content="Контакты усадьбы Бабушкина Хата: Сочи, Хостинский район, с. Прогресс, пер. Западный, 12. Телефон, Telegram, карта."/>
+<meta name="description" content="Контакты: Сочи, Хостинский район, с. Прогресс, пер. Западный, 12. Телефон, Telegram, карта."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #F7F6F3; color: #2D2A27; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; font-family: 'Inter', sans-serif; background: #F7F6F3; color: #2D2A27; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 img { display: block; max-width: 100%; }
 a { color: #C25D35; text-decoration: none; }
 a:hover { color: #A34D2B; }
 :root { --bg:#F7F6F3; --bg2:#EDEAE4; --dark:#2C2420; --text:#2D2A27; --text2:#7A7067; --accent:#C25D35; --accent-hover:#A34D2B; --olive:#5A7247; --border:#E0DCD6; --max:1200px; --side:80px; --gap:100px; }
-
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); height: 72px; display: flex; align-items: center; transition: box-shadow .2s; }
 .site-header.scrolled { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
 .h-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -39,8 +38,8 @@ a:hover { color: #A34D2B; }
 .mob-panel a { font-size: 18px; font-weight: 500; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); }
 .mob-panel .nav-cta { margin-top: 16px; text-align: center; padding: 14px 22px; border: none; }
 .mob-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text2); }
-
-/* 7.1 */
+.sec { padding: var(--gap) 0; }
+.cnt { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); }
 .contacts-sec { background: var(--bg); padding: var(--gap) 0; margin-top: 72px; }
 .contacts-grid { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .contacts-text h1 { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 40px; }
@@ -56,8 +55,6 @@ a:hover { color: #A34D2B; }
 .contact-meta .small { font-size: 14px; color: var(--text2); }
 .contacts-map { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
 .contacts-map iframe { width: 100%; height: 480px; border: none; display: block; }
-
-/* 7.2 */
 .dir-sec { background: var(--bg2); padding: var(--gap) 0; }
 .dir-inner { max-width: 680px; margin: 0 auto; padding: 0 var(--side); }
 .dir-inner h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: var(--text); margin-bottom: 36px; }
@@ -69,16 +66,12 @@ a:hover { color: #A34D2B; }
 .map-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .map-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text); background: var(--bg); transition: all .2s; }
 .map-link:hover { border-color: var(--accent); color: var(--accent); }
-
-/* 7.3 CTA */
 .cta-sec { background: var(--accent); padding: 80px var(--side); text-align: center; }
 .cta-sec h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 14px; }
 .cta-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; }
 .cta-phone:hover { opacity: .85; color: #fff; }
 .btn-w { display: inline-block; background: #fff; color: var(--accent); padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: all .2s; }
 .btn-w:hover { background: var(--bg); color: var(--accent-hover); }
-
-/* ФУТЕР */
 .site-footer { background: var(--dark); padding: 40px 0 24px; }
 .f-main { max-width: var(--max); margin: 0 auto; padding: 0 var(--side); display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; }
 .f-logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
@@ -93,42 +86,16 @@ a:hover { color: #A34D2B; }
 .soc-ic:hover { background: rgba(224,220,214,.2); color: #fff; }
 .f-bot { max-width: var(--max); margin: 16px auto 0; padding: 16px var(--side) 0; border-top: 1px solid rgba(224,220,214,.1); }
 .f-bot p { font-size: 12px; color: #7A7067; }
-
-@media (max-width: 1199px) { :root { --side: 40px; } .f-main { grid-template-columns: 1fr 1fr; } .f-main > :first-child { grid-column: 1/-1; } }
-
-/* Tablet */
-@media (max-width: 1199px) {
-  .nav { gap: 16px; }
-  .nav a { font-size: 13px; }
-  .nav-cta { display: none; }
-}
-@media (max-width: 767px) {
-  :root { --side: 16px; --gap: 56px; }
-  .site-header { height: 60px; } .nav { display: none; } .burger { display: flex; }
-  .h-inner { padding: 0 16px; }
-  .contacts-text h1 { font-size: 30px; }
-  .contacts-grid { grid-template-columns: 1fr; gap: 36px; }
-  .contact-row .phone { font-size: 20px; }
-  .contacts-map iframe { height: 280px; }
-  .dir-inner h2 { font-size: 26px; }
-  .cta-sec { padding: 48px 16px; }
-  .cta-sec h2 { font-size: 26px; } .cta-phone { font-size: 1.2rem; }
-  .f-main { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-  .f-nav, .f-soc { justify-content: center; } .f-bot { text-align: center; }
-}
-
-/* Small screens */
-@media (max-width: 374px) {
-  .hero-body h1, .page-hero-content h1 { font-size: 1.7rem !important; }
-  .logo-t { font-size: 17px; }
-}
+@media (max-width: 1199px) { :root { --side: 40px; } .nav { gap: 16px; } .nav a { font-size: 13px; } .nav-cta { display: none; } .f-main { grid-template-columns: 1fr 1fr; } .f-main > :first-child { grid-column: 1/-1; } }
+@media (max-width: 767px) { :root { --side: 16px; --gap: 48px; } .site-header { height: 60px; } .h-inner { padding: 0 16px; } .nav { display: none; } .burger { display: flex; } .f-main { grid-template-columns: 1fr; gap: 16px; text-align: center; padding: 0 16px; } .f-nav { gap: 8px; justify-content: center; } .f-soc { justify-content: center; } .f-bot { text-align: center; padding: 12px 16px 0; } .f-nav a, .f-sep { font-size: 13px; } }
+@media (max-width: 374px) { .logo-t { font-size: 17px; } }
+@media (max-width: 767px) { .contacts-text h1 { font-size: 2rem; } .contacts-grid { grid-template-columns: 1fr; gap: 36px; } .contact-row .phone { font-size: 20px; } .contacts-map iframe { height: 280px; } .dir-inner h2 { font-size: 26px; } .cta-sec { padding: 48px 16px; } .cta-sec h2 { font-size: 24px; } .cta-phone { font-size: 1.1rem; } }
 </style>
 </head>
 <body>
-
 <header class="site-header" id="hdr">
   <div class="h-inner">
-    <a class="logo" href="index.html"><span class="logo-t">Бабушкина Хата</span><span class="logo-s">Родовое имение Весловских · с&nbsp;1945</span></a>
+    <a class="logo" href="index.html"><span class="logo-t">Бабушкина Хата</span><span class="logo-s">Родовое имение Весловских · с 1945</span></a>
     <nav><ul class="nav">
       <li><a href="usadba.html">Усадьба</a></li>
       <li><a href="vinodelnya.html">Винодельня</a></li>
@@ -137,7 +104,7 @@ a:hover { color: #A34D2B; }
       <li><a href="gallery.html">Галерея</a></li>
       <li><a href="reviews.html">Отзывы</a></li>
       <li><a href="contacts.html" class="active">Контакты</a></li>
-      <li><a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a></li>
+      <li><a class="nav-cta" href="contacts.html">Связаться с нами</a></li>
     </ul></nav>
     <button class="burger" id="burg" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
@@ -146,9 +113,8 @@ a:hover { color: #A34D2B; }
 <nav class="mob-panel" id="mob-pn">
   <button class="mob-close" id="mob-cl">×</button>
   <a href="usadba.html">Усадьба</a><a href="vinodelnya.html">Винодельня</a><a href="banquets.html">Банкеты</a><a href="photosessions.html">Фотосессии</a><a href="gallery.html">Галерея</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a>
-  <a class="nav-cta" href="contacts.html">Связаться с&nbsp;нами</a>
+  <a class="nav-cta" href="contacts.html">Связаться с нами</a>
 </nav>
-
 <main>
 
 <!-- 7.1: КОНТАКТЫ -->
@@ -242,7 +208,6 @@ a:hover { color: #A34D2B; }
 </section>
 
 </main>
-
 <footer class="site-footer">
   <div class="f-main">
     <a class="f-logo" href="index.html"><span class="f-logo-t">Бабушкина Хата</span><span class="f-logo-s">Родовое имение Весловских</span></a>
@@ -254,7 +219,6 @@ a:hover { color: #A34D2B; }
   </div>
   <div class="f-bot"><p>© 2025 Бабушкина Хата</p></div>
 </footer>
-
 <script>
 document.querySelectorAll('p, h1, h2, h3').forEach(function(el){
   el.innerHTML = el.innerHTML.replace(/([^>\s])\s+(\S+)\s*$/, '$1\u00a0$2');
